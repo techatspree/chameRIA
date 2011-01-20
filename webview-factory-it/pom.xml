@@ -1,0 +1,259 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>de.akquinet.gomobile.chameria</groupId>
+    <artifactId>chameria-reactor</artifactId>
+    <version>1.5.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>de.akquinet.gomobile.chameria</groupId>
+  <artifactId>webview-factory-it</artifactId>
+  <version>1.5.0-SNAPSHOT</version>
+  <name>webview-factory - IT</name>
+
+
+  <properties>
+    <core.dir>${project.build.directory}/test-configuration/core</core.dir>
+    <runtime.dir>${project.build.directory}/test-configuration/runtime</runtime.dir>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.framework</artifactId>
+      <version>3.0.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.ipojo</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.ipojo.annotations</artifactId>
+      <version>1.6.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>de.akquinet.gomobile.chameria</groupId>
+      <artifactId>webview-factory</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.ow2.chameleon</groupId>
+      <artifactId>core</artifactId>
+      <version>0.2.2</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>de.akquinet.gomobile.chameria</groupId>
+      <artifactId>chameria-launcher</artifactId>
+      <version>1.4.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.trolltech.qtjambi</groupId>
+      <artifactId>qtjambi</artifactId>
+      <version>4.6.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.trolltech.qtjambi</groupId>
+      <artifactId>qtjambi-util</artifactId>
+      <version>4.6.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.trolltech.qtjambi</groupId>
+      <artifactId>qtjambi-native</artifactId>
+      <classifier>macosx-gcc</classifier>
+      <version>4.6.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.trolltech.qtjambi</groupId>
+      <artifactId>qtjambi-native</artifactId>
+      <classifier>win32</classifier>
+      <version>4.6.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.trolltech.qtjambi</groupId>
+      <artifactId>qtjambi-native</artifactId>
+      <classifier>linux32-gcc-nostdlib</classifier>
+      <version>4.6.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.configadmin</artifactId>
+      <version>1.2.4</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.5</version>
+      <type>jar</type>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- TinyBundle -->
+    <dependency>
+      <groupId>org.ops4j.pax.swissbox</groupId>
+      <artifactId>pax-swissbox-tinybundles</artifactId>
+      <version>1.2.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j.base</groupId>
+      <artifactId>ops4j-base</artifactId>
+      <version>1.2.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.ops4j.pax.swissbox</groupId>
+      <artifactId>pax-swissbox-bnd</artifactId>
+      <version>1.2.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- mockito -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.8.5</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.ow2.chameleon.testing</groupId>
+      <artifactId>tinybundles-ipojo</artifactId>
+      <version>0.2.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.ow2.chameleon.testing</groupId>
+      <artifactId>osgi-helpers</artifactId>
+      <version>0.2.0</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.1</version>
+        <executions>
+          <execution>
+            <id>copy-chameleon</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <artifactItems>
+                <artifactItem>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>org.apache.felix.framework</artifactId>
+                  <version>3.0.1</version>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${core.dir}</outputDirectory>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>org.apache.felix.shell</artifactId>
+                  <version>1.4.1</version>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${core.dir}</outputDirectory>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>org.apache.felix.shell.tui</artifactId>
+                  <version>1.4.1</version>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${core.dir}</outputDirectory>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.osgi</groupId>
+                  <artifactId>org.osgi.compendium</artifactId>
+                  <version>4.2.0</version>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${core.dir}</outputDirectory>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>org.apache.felix.configadmin</artifactId>
+                  <version>1.2.4</version>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${core.dir}</outputDirectory>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>org.apache.felix.fileinstall</artifactId>
+                  <version>3.0.0</version>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${core.dir}</outputDirectory>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>org.apache.felix.ipojo</artifactId>
+                  <version>1.6.2</version>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${core.dir}</outputDirectory>
+                </artifactItem>
+                <artifactItem>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>org.apache.felix.ipojo.arch</artifactId>
+                  <version>1.6.0</version>
+                  <type>jar</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>${core.dir}</outputDirectory>
+                </artifactItem>
+
+                <artifactItem>
+                  <groupId>de.akquinet.gomobile.chameria</groupId>
+                  <artifactId>webview-factory</artifactId>
+                  <version>${project.version}</version>
+                  <type>jar</type>
+                  <overWrite>true</overWrite>
+                  <outputDirectory>${runtime.dir}</outputDirectory>
+                </artifactItem>
+
+              </artifactItems>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.5</version>
+        <configuration>
+          <argLine>-d32 -XstartOnFirstThread</argLine>
+        </configuration>
+      </plugin>
+
+
+    </plugins>
+  </build>
+</project>
