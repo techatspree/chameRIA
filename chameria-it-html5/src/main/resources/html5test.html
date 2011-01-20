@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>The HTML5 test - How well does your browser support HTML5?</title>	
+
+		<meta charset="UTF-8">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+		
+		<link rel="icon" href="icon.png">
+		<link rel="apple-touch-icon" href="button.png">
+		
+		<style>
+		<!--
+		
+			@font-face {
+				font-family: 'PusabRegular';
+				src: url('fonts/PUSAB___.eot');
+				src: local('Pusab'), url('fonts/PUSAB___.woff') format('woff'), url('fonts/PUSAB___.ttf') format('truetype'), url('fonts/PUSAB___.svg#Pusab') format('svg');
+			}
+
+			* {
+				padding: 0;				
+				margin: 0;
+		    	
+		    	-webkit-text-size-adjust: none;
+			}
+		
+			body {
+				padding: 0 0 30px;
+				background: #454545;
+				background: #454545 -webkit-gradient(radial, center 0, 50, center 0, 300, from(#707070), to(#454545));	
+				background: #454545 -moz-radial-gradient(center 0, circle, #707070 50px, #454545 300px);	
+
+				font-family: Arial, Helvetica, sans-serif;
+			}
+
+			
+			.header {
+				background: #000;
+			}
+			.header h1 {
+				font-family: Helvetica, sans-serif;
+				font-weight: bold;
+				font-size: 0.9em;
+				text-align: center;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: #bbb;
+				margin: 0;
+				padding: 8px;
+			}
+			.header h1 em {
+				font-style: normal;
+				color: #666;
+			}
+			.column {
+				margin: 2.5em auto 0;
+				width: 25em;
+			}
+			
+
+			#explaination p {
+				margin: 1em 0;
+				color: #ddd;
+				font-size: 0.75em;
+				line-height: 150%;
+			}
+			#explaination p a {
+				color: #ddd;
+			}
+			
+			#development {
+				background: #eee;
+				margin: 30px 0;
+				padding: 20px 20px 10px 20px;
+				
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+				border-radius: 6px;	
+				
+				-webkit-box-shadow: 0px 0px 5px #222;
+				-moz-box-shadow: 0px 0px 5px #222;
+				box-shadow: 0px 0px 5px #222;
+
+				
+				-moz-transform: rotate(2.5deg);  
+				-o-transform: rotate(2.5deg); 
+				-webkit-transform: rotate(2.5deg); 
+			}
+			#development h2 {
+				color: #88b038;
+				line-height: 100%;
+				font-size: 2.1em;
+				font-family: PusabRegular, Arial;
+			}
+			#development p {
+				color: #444;
+			}
+			#development p a {
+				color: #666;
+			}
+
+			#results p {
+				font-family: Arial, Helvetica, sans-serif;
+				color: #bbb;
+				text-transform: lowercase;
+				text-align: center;
+				margin: 0 0 2em;
+			}
+			#results p.intro {
+				color: #999;
+				font-size: 2.2em;
+				letter-spacing: 0.1em;
+				line-height: 100%;			
+				margin: 0;
+			}
+
+			#results h2 {
+				font-family: PusabRegular, Arial;
+				font-size: 10em;
+				color: #eee;
+				text-align: center;
+				text-shadow: 0px 0px 10px #333;
+				line-height: 100%;
+			}
+			#results h3 {
+				font-family: PusabRegular, Arial;
+				font-size: 2.3em;
+				color: #888;
+				text-align: center;
+				text-shadow: 0px 0px 5px #333;
+				text-transform: uppercase;
+				text-indent: 0.4em;
+				line-height: 90%;
+				
+				margin: 0 0 0.4em;
+			}
+			
+			#results h4 {
+				font-size: 1.2em;
+				color: #aaa;
+				margin: 2em 0 0.5em;
+			}
+			
+			#results ul li {
+				position: relative;
+				
+				font-size: 1.1em;
+				padding: 4px 11px 6px;
+				margin: 0 0 1em;
+				background: #f0f0f0;
+				list-style-type: none;
+				line-height: 220%;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+				border-radius: 6px;
+				
+				-webkit-box-shadow: 0px 0px 5px #222;
+				-moz-box-shadow: 0px 0px 5px #222;
+				box-shadow: 0px 0px 5px #222;
+				
+				background: #f0f0f0 -webkit-gradient(linear, left top, left 86, from(#e6e6e6), to(#f0f0f0), color-stop(0.5, #f6f6f6), color-stop(0.5, #d6d6d6));
+				background: #f0f0f0 -moz-linear-gradient(top, #e6e6e6, #f6f6f6 43px, #d6d6d6 43px, #f0f0f0);
+			}
+			#results ul li strong {
+				color: #000;
+				display: block;
+				width: 66%;
+				overflow: hidden;
+				white-space: nowrap;
+				font-weight: bold;
+				text-overflow: ellipsis;
+				text-overflow: ellipsis-word;
+			}
+			#results ul li em {
+				position: absolute;
+				top: 2px;
+				right: 7px;
+
+				font-size: 1.8em;
+				font-weight: bold;
+				font-style: normal;
+				font-family: PusabRegular, Arial;
+				color: #aaa;
+			}
+			#results ul li em.none {
+				color: #853333;
+			}
+			#results ul li em.badly {
+				color: #d68533;
+			}
+			#results ul li em.reasonable {
+				color: #e7c333;
+			}
+			#results ul li em.good {
+				color: #88b038;
+			}
+			#results ul li em.great {
+				color: #33af33;
+			}
+			#results ul li em span {
+				position: relative;
+				top: -4px;
+				
+				font-family: Arial;
+				font-size: 0.5em;
+				text-transform: lowercase;
+				
+				color: #fff;
+				padding: 3px 7px;
+				margin: 0 14px 0 0;
+
+				background: #aaa;
+				background: #aaa -webkit-gradient(linear, left top, left bottom, from(#888), to(#aaa), color-stop(0.4, #999));
+				background: #aaa -moz-linear-gradient(top, #888, #999 40%, #aaa);
+
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+				border-radius: 6px;
+			}
+			
+			#results ul li table {
+				width: 100%;
+				margin: 3px 0 0;
+				line-height: 100%;
+				font-size: 0.70em;
+				border-spacing: 0;
+			}
+			#results ul li table th,
+			#results ul li table td {
+				padding: 6px 0;
+				vertical-align: bottom;
+			}
+			#results ul li table td.container {
+				padding: 0;
+			}
+			#results ul li table tr.explaination th {
+				padding: 16px 0 6px;
+				font-size: 0.9em;
+				font-style: italic;
+				color: #666;
+				line-height: 140%;
+			}
+			#results ul li table th {
+				font-weight: normal;
+				text-align: left;
+			}
+			#results ul li table td {
+				text-align: right;
+				white-space: nowrap;
+			}
+			#results ul li table th code {
+				font-size: 1.2em;
+			}
+			#results ul li table th a {
+				color: #000;
+				text-decoration: none;
+			}
+			#results ul li table th a:hover {
+				text-decoration: underline;
+			}
+			#results ul li table table {
+				font-size: 1em;
+				margin: 0;
+			}
+			#results ul li table table.visible {
+				margin: 0 0 12px;
+			}
+			#results ul li table table thead th {
+				cursor: pointer;
+				padding-left: 20px;
+				background: url(images/triangle.png) left 7px no-repeat;
+			}
+			#results ul li table table.visible thead th {
+				padding-left: 20px;
+				background: url(images/triangle.png) left -18px no-repeat;
+			}
+			#results ul li table table.visible thead th,
+			#results ul li table table.visible thead td {
+				border-bottom: 1px solid #ddd;
+			}
+
+			#results ul li table table tbody {
+				display: none;
+				font-size: 0.9em;
+			}
+			#results ul li table table.visible tbody {
+				display: table-row-group;
+			}
+			#results ul li table table tbody th {
+				padding-left: 20px;
+			}
+			#results .partially {
+				color: #888;
+			}
+			#results .check,
+			#results .ballot {
+				font-size: 1.2em;
+				margin: 0 0 0 6px;
+			}
+			#results .check {
+				color: #1c8c1d;
+			}
+			#results .ballot {
+				color: #853333;
+			}
+			
+			#legend {
+				overflow: hidden;
+				width: 60%;
+				margin: 0 0 30px;
+			}			
+			#legend li {
+				list-style-type: none;
+				float: left;
+				white-space: no-break;
+				
+				color: #fff;
+				margin: 0 20px 10px 0;
+				font-size: 0.8em;
+			}
+			#legend li span {
+				display: block;
+				float: left;
+				
+				background-color: #fff;
+				width: 16px;
+				height: 16px;
+				margin: 0 6px 0 0;
+
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+
+				-webkit-box-shadow: 0px 0px 5px #222;
+				-moz-box-shadow: 0px 0px 5px #222;
+				box-shadow: 0px 0px 5px #222;
+			}
+			#legend li.none span {
+				background-color: #853333;
+			}
+			#legend li.badly span {
+				background-color: #d68533;
+			}
+			#legend li.reasonable span {
+				background-color: #e7c333;
+			}
+			#legend li.good span {
+				background-color: #88b038;
+			}
+			#legend li.great span {
+				background-color: #33af33;
+			}			
+			
+			
+			@media (max-width: 480px) {
+				
+				.column {
+					width: 100%;
+					overflow: hidden;
+				}
+				.column > * {
+					padding: 0 10px;
+				}
+			}
+		
+		-->
+		</style>	
+	</head>
+	
+	<body onload='startTest();'>
+		<div class='header'>
+			<h1>The HTML5 test <em>&ndash; how well does your browser support HTML5?</em></h1>
+		</div>
+		
+		<div class='column'>
+			<div id='results'></div>
+			
+			<ul id='legend'>
+				<li class='none'><span></span>Non-existant</li>
+				<li class='badly'><span></span>Badly</li>
+				<li class='reasonable'><span></span>Reasonable</li>
+				<li class='good'><span></span>Good</li>
+				<li class='great'><span></span>Great</li>
+			</ul>
+			
+			<div id='explaination'>
+				<p>
+					The HTML5 test score is only an indication of how well your browser supports the upcoming HTML5 standard and related specifications. 
+					It does not try to test all of the new features offered by HTML5, nor does it try to test the functionality of each feature it does detect. 
+					Despite these shortcomings we hope that by quantifying the level of support users and web developers will get an idea of how hard the 
+					browser manufacturers work on improving their browsers and the web as a development platform.
+				</p>
+				
+				<p>
+					The score is calculated by testing for the many new features of HTML5. Each feature is worth one or more points. Apart from the main HTML5 
+					specification and other specifications created the W3C HTML Working Group, this test also awards points for supporting related drafts and 
+					specifications. Some of these specifications were initially part of HTML5, but are now further developed by other W3C working groups. 
+					WebGL is also part of this test despite not being developed by the W3C, because it extends the HTML5 canvas element with a 3d context.
+				</p>
+				
+				<p>
+					Please be aware that the specifications that are being tested are still in development and could change before receiving an official status.
+					In the future new tests will be added for the pieces of the specification that are currently still missing. 
+					The maximum number of points that can be scored is <span id='total'>0</span> at this moment, but this is a moving goalpost.
+				</p>
+				
+				<div id='development'>
+					<h2>Updated version coming soon!</h2>
+					<p>
+						The HTML5 test is being developed at <a href='http://github.com/NielsLeenheer/html5test'>Github</a>. Please file an issue there if you find any bugs or think of any improvements to this test.
+					</p>
+				</div>
+				
+				<p> 
+					Work in progress - will become 1.0
+				</p>
+
+				<p> 
+					The HTML5 test is created by Niels Leenheer.<br>
+					Visit my website at <a href='http://rakaz.nl'>rakaz.nl</a> or follow me on <a href='http://twitter.com/rakaz'>twitter</a>.
+				</p>
+				
+				<p>
+					<a href='http://sights.nl/en/'><img src='images/sights.png'></a>
+				</p>
+			</div>
+		</div>		
+		
+		
+		<script>
+		<!--
+		
+			function test (e, t, c) { this.initialize(e, t, c) }
+			test.prototype = {
+				suites: [ 
+					{ title: null, sections: [ testParsing, testCanvas, testVideo, testAudio, testDevice, testElements, testForm, testInteraction, testMicrodata, testOffline ] },
+					{ title: 'Related specifications', sections: [ testGeolocation, testWebGL, testCommunication, testFiles, testStorage, testWorkers ] }
+				],
+				
+				initialize: function(e, t, c) {					
+					var r = new results(e, t);
+					
+					for (g in this.suites) {
+						r.createSuite(this.suites[g].title);
+											
+						for (s in this.suites[g].sections) {
+							new (this.suites[g].sections[s])(r);
+						}
+					}
+					
+					c(r);
+				}
+			}
+		
+			function results (e, t) { this.initialize(e, t) }
+			results.prototype = {
+				score: 		0,
+				bonus:		0,
+				max:        0, 
+				sections: 	[],
+				
+				initialize: function(e, t) {
+					this.container = document.getElementById(e);
+					
+					this.intro = document.createElement('p');
+					this.intro.className = 'intro';
+					this.intro.innerHTML = 'Your browser scores';
+					this.container.appendChild(this.intro);
+					
+					this.counter = document.createElement('h2');
+					this.container.appendChild(this.counter);
+					
+					this.byline = document.createElement('h3');
+					this.container.appendChild(this.byline);
+					
+					this.maximum = document.createElement('p');
+					this.container.appendChild(this.maximum);
+					
+					this.total = document.getElementById(t);
+					
+					this.update();
+				},
+				
+				createSuite: function(t) {
+					if (t) {
+						var title = document.createElement('h4');
+						title.innerHTML = t;
+						this.container.appendChild(title);
+					}
+					
+					this.list = document.createElement('ul');
+					this.container.appendChild(this.list);
+				},
+				
+				getSection: function(name, url) {
+					var s = new section(this, name, url)
+					this.sections.push(s);
+					return s;
+				},
+
+				setScore: function(score, bonus, max) {
+					this.score += score;
+					this.bonus += bonus;
+					this.max += max;
+					
+					this.update();
+				},
+				
+				update: function() {
+					this.counter.innerHTML = this.score;
+					this.byline.innerHTML = 'and ' + (this.bonus ? this.bonus : 'no') + ' bonus point' + (this.bonus != 1 ? 's' : '');
+					this.maximum.innerHTML = 'out of a total of ' + this.max + ' points';
+					this.total.innerHTML = this.max;				
+				}
+			}
+
+			function section (parent, name) { this.initialize(parent, name) }
+			section.prototype = {
+				value: 		0,
+				bonus:		0,
+				max:        0,
+				name:		'',
+				
+				initialize: function(parent, name) {
+					this.parent = parent;
+					this.name = name;
+					
+					this.container = document.createElement('li');
+					this.parent.list.appendChild(this.container);
+					
+					this.title = document.createElement('strong');
+					this.title.innerHTML = name;
+					this.container.appendChild(this.title);
+					
+					this.score = document.createElement('em');
+					this.container.appendChild(this.score);
+
+					this.table = document.createElement('table');
+					this.container.appendChild(this.table);
+
+					this.body = document.createElement('tbody');
+					this.table.appendChild(this.body);
+					
+					this.items = [];
+				},
+				
+				setExplaination: function(explaination) {
+					var row = document.createElement('tr');
+					row.className = 'explaination';
+					this.body.appendChild(row);
+
+					var head = document.createElement('th');
+					head.innerHTML = explaination;
+					row.appendChild(head);
+
+					var cell = document.createElement('td');
+					row.appendChild(cell);									
+				},
+				
+				setItem: function(result) {
+					var row = document.createElement('tr');
+					this.body.appendChild(row);
+
+					var head = document.createElement('th');
+					row.appendChild(head);
+					
+					if (typeof result.url != 'undefined') {
+						var link = document.createElement('a');
+						link.href = result.url;
+						head.appendChild(link);
+						
+						link.innerHTML = result.title;
+					} else {
+						head.innerHTML = result.title;
+					}
+
+					var cell = document.createElement('td');
+					cell.innerHTML = result.passed ? 'Yes <span class="check">✔</span>': 'No <span class="ballot">✘</span>'
+					row.appendChild(cell);
+
+					if (typeof result.value == 'undefined') result.value = 0;
+					if (typeof result.bonus == 'undefined') result.bonus = 0;
+					if (typeof result.award == 'undefined') result.award = result.value;
+					this.setScore(result.passed ? result.award : 0, result.bonus, result.value);	
+					
+					this.addItem(result);									
+				},
+				
+				addItem: function(result) {
+					var e = document.createElement('div');
+					e.innerHTML = result.title;
+				
+					this.items.push({
+						name:		e.innerText,
+						passed: 	result.passed
+					});				
+				},
+				
+				getGroup: function(name) {
+					var row = document.createElement ('tr');
+					this.body.appendChild(row);
+					
+					var container = document.createElement ('td');
+					container.colSpan = 2;
+					container.className = 'container';
+					row.appendChild(container)
+					
+					return new group(this, container, name)
+				},
+				
+				setScore: function(value, bonus, max) {
+					this.value += value;
+					this.bonus += bonus;
+					this.max += max;
+
+					this.score.innerHTML =  (this.bonus ? '<span>' + this.bonus + ' Bonus point' + (this.bonus != 1 ? 's' : '') + '</span>' : '') + (this.value == this.max ? this.value : this.value + '/' + this.max);
+					
+					var percent = parseInt(this.value / this.max * 100, 10);
+					switch (true) {
+						case percent == 0: 	this.score.className = 'none'; break;
+						case percent <= 30: this.score.className = 'badly'; break;
+						case percent <= 60: this.score.className = 'reasonable'; break;
+						case percent <= 95: this.score.className = 'good'; break;
+						default:			this.score.className = 'great'; break;
+					}
+					
+					this.parent.setScore(value, bonus, max);
+				}
+			}
+			
+			function group (parent, container, name) { this.initialize(parent, container, name) }
+			group.prototype = {
+				value: 		0,
+				bonus:		0,
+				max:        0, 
+
+				initialize: function(parent, container, name) {
+					this.parent = parent;
+					this.container = container;
+					
+					this.table = document.createElement('table');
+					this.container.appendChild(this.table);
+
+					this.head = document.createElement('thead');
+					this.table.appendChild(this.head);
+
+					var row = document.createElement('tr');
+					var table = this.table;
+					row.onclick = function() {
+						if (table.className == 'visible') {
+							table.className = '';
+						} else {
+							table.className = 'visible';
+						}
+					};
+					this.head.appendChild(row);
+
+					var head = document.createElement('th');
+					head.innerHTML = name;
+					row.appendChild(head);
+
+					this.score = document.createElement('td');
+					row.appendChild(this.score);
+					
+					this.body = document.createElement('tbody');
+					this.table.appendChild(this.body);
+				},
+				
+				setItem: function(result) {
+					var row = document.createElement('tr');
+					this.body.appendChild(row);
+
+					var head = document.createElement('th');
+					row.appendChild(head);
+
+					if (typeof result.url != 'undefined') {
+						var link = document.createElement('a');
+						link.href = result.url;
+						head.appendChild(link);
+						
+						link.innerHTML = result.title;
+					} else {
+						head.innerHTML = result.title;
+					}
+
+					var cell = document.createElement('td');
+					cell.innerHTML = result.passed ? 'Yes <span class="check">✔</span>': 'No <span class="ballot">✘</span>'
+					row.appendChild(cell);
+
+					if (typeof result.value == 'undefined') result.value = 0;
+					if (typeof result.bonus == 'undefined') result.bonus = 0;
+					if (typeof result.award == 'undefined') result.award = result.value;
+					this.setScore(result.passed ? result.award : 0, result.bonus, result.value);					
+
+					this.parent.addItem(result);		
+				},
+				
+				setScore: function(value, bonus, max) {
+					this.value += value;
+					this.bonus += bonus;
+					this.max += max;
+
+					if (this.value == 0) 
+						this.score.innerHTML = 'No <span class="ballot">✘</span>';						
+					else if (this.value == this.max) 
+						this.score.innerHTML = 'Yes <span class="check">✔</span>';
+					else
+						this.score.innerHTML = '<span class="partially">' + this.value + ' out of ' + this.max + '</span>';
+						
+					this.parent.setScore(value, bonus, max);
+				}				
+			}
+			
+			
+			
+			
+			function testParsing (results) { this.initialize(results) }			
+			testParsing.prototype = {
+				name: 	'Parsing rules',
+				count: 	6,
+				
+				initialize: function(results) {
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'<code>&lt;!DOCTYPE html&gt;</code> triggers standards mode', 
+						url:    'http://www.w3.org/TR/html5/syntax.html#the-doctype',
+						passed:	document.compatMode == 'CSS1Compat', 
+						value: 	2
+					});
+				},
+				
+				t2: function() {
+					var result = true;
+					var e = document.createElement('div');	
+					
+					e.innerHTML = "<div<div>";
+					result &= e.firstChild && e.firstChild.nodeName == "DIV<DIV";
+					
+					e.innerHTML = "<div foo<bar=''>";
+					result &= e.firstChild.attributes[0].nodeName == "foo<bar";
+					
+					e.innerHTML = "<div foo=`bar`>";
+					result &= e.firstChild.getAttribute("foo") == "`bar`";
+					
+					e.innerHTML = "<div \"foo=''>";
+					result &= e.firstChild && e.firstChild.attributes[0].nodeName == "\"foo";
+					
+					e.innerHTML = "<a href='\nbar'></a>";
+					result &= e.firstChild && e.firstChild.getAttribute("href") == "\nbar";
+					
+					e.innerHTML = "<!DOCTYPE html>";
+					result &= e.firstChild == null;
+					
+					e.innerHTML = "\u000D";
+					result &= e.firstChild && e.firstChild.nodeValue == "\u000A";
+					
+					e.innerHTML = "&lang;&rang;";
+					result &= e.firstChild.nodeValue == "\u27E8\u27E9";
+					
+					e.innerHTML = "&apos;";
+					result &= e.firstChild.nodeValue == "'";
+					
+					e.innerHTML = "&ImaginaryI;";
+					result &= e.firstChild.nodeValue == "\u2148";
+					
+					e.innerHTML = "&Kopf;";
+					result &= e.firstChild.nodeValue == "\uD835\uDD42";
+					
+					e.innerHTML = "&notinva;";
+					result &= e.firstChild.nodeValue == "\u2209";
+					
+					e.innerHTML = '<?import namespace="foo" implementation="#bar">';
+					result &= e.firstChild && e.firstChild.nodeType == 8 && e.firstChild.nodeValue == '?import namespace="foo" implementation="#bar"';
+					
+					e.innerHTML = '<!--foo--bar-->';
+					result &= e.firstChild && e.firstChild.nodeType == 8 && e.firstChild.nodeValue == 'foo--bar';
+					
+					e.innerHTML = '<![CDATA[x]]>';
+					result &= e.firstChild && e.firstChild.nodeType == 8 && e.firstChild.nodeValue == '[CDATA[x]]';
+					
+					e.innerHTML = "<textarea><!--</textarea>--></textarea>";
+  					result &= e.firstChild && e.firstChild.firstChild && e.firstChild.firstChild.nodeValue == "<!--";
+  					
+					e.innerHTML = "<textarea><!--</textarea>-->";
+  					result &= e.firstChild && e.firstChild.firstChild && e.firstChild.firstChild.nodeValue == "<!--";
+					
+					e.innerHTML = "<style><!--</style>--></style>";
+  					result &= e.firstChild && e.firstChild.firstChild && e.firstChild.firstChild.nodeValue == "<!--";
+					
+					e.innerHTML = "<style><!--</style>-->";
+  					result &= e.firstChild && e.firstChild.firstChild && e.firstChild.firstChild.nodeValue == "<!--";
+					
+					this.section.setItem({
+						title: 	'HTML5 tokenizer', 
+						url:	'http://www.w3.org/TR/html5/syntax.html#parsing',
+						passed:	result, 
+						value: 	5
+					});
+				},
+				
+				t3: function() {
+					var result = true;
+					var e = document.createElement('div');	
+					
+					try {
+						var h = document.createElement("html");
+						h.innerHTML = "";
+						result &= h.firstChild && h.firstChild.nodeName == "HEAD" && h.lastChild.nodeName == "BODY" && h.firstChild.nextSibling == h.lastChild;
+					} catch (e) {
+						result = false;
+					}
+
+					try {
+						var t = document.createElement("table");
+						t.innerHTML = "<col>";
+						result &= t.firstChild && t.firstChild.nodeName == "COLGROUP";
+					} catch (e) {
+						result = false;
+					}
+					
+					e.innerHTML = "<ul><li>A </li> <li>B</li></ul>";
+					result &= e.firstChild && e.firstChild.firstChild && e.firstChild.firstChild.firstChild && e.firstChild.firstChild.firstChild.nodeValue == "A ";
+				
+					e.innerHTML = "<table><form><input type=hidden><input></form><div></div></table>";
+					result &= e.firstChild && 
+							  e.firstChild.nodeName == "INPUT" &&
+							  e.firstChild.nextSibling && 
+							  e.firstChild.nextSibling.nodeName == "DIV" &&
+							  e.lastChild.nodeName == "TABLE" && 
+							  e.firstChild.nextSibling.nextSibling == e.lastChild &&
+							  e.lastChild.firstChild && 
+							  e.lastChild.firstChild.nodeName == "FORM" &&
+							  e.lastChild.firstChild.firstChild == null && 
+							  e.lastChild.lastChild.nodeName == "INPUT" &&
+							  e.lastChild.firstChild.nextSibling == e.lastChild.lastChild;	
+
+					e.innerHTML = "<i>A<b>B<p></i>C</b>D";
+					result &= e.firstChild && 
+							  e.childNodes.length == 3 &&
+							  e.childNodes[0].nodeName == "I" && 
+							  e.childNodes[0].childNodes.length == 2 &&
+							  e.childNodes[0].childNodes[0].nodeValue == "A" && 
+							  e.childNodes[0].childNodes[1].nodeName == "B" &&
+							  e.childNodes[0].childNodes[1].childNodes.length == 1 && 
+							  e.childNodes[0].childNodes[1].childNodes[0].nodeValue == "B" &&
+							  e.childNodes[1].nodeName == "B" && 
+							  e.childNodes[1].firstChild == null &&
+							  e.childNodes[2].nodeName == "P" && 
+							  e.childNodes[2].childNodes.length == 2 &&
+							  e.childNodes[2].childNodes[0].nodeName == "B" &&
+							  e.childNodes[2].childNodes[0].childNodes.length == 2 &&
+							  e.childNodes[2].childNodes[0].childNodes[0].nodeName == "I" &&
+							  e.childNodes[2].childNodes[0].childNodes[0].firstChild == null && 
+							  e.childNodes[2].childNodes[0].childNodes[1].nodeValue == "C" &&
+							  e.childNodes[2].childNodes[1].nodeValue == "D";
+
+					e.innerHTML = "<div></div>";
+					result &= e.firstChild && "namespaceURI" in e.firstChild && e.firstChild.namespaceURI == "http://www.w3.org/1999/xhtml";
+
+					this.section.setItem({
+						title: 	'HTML5 tree building', 
+						url:	'http://www.w3.org/TR/html5/syntax.html#parsing',
+						passed:	result, 
+						value: 	5
+					});
+				},
+				
+				t4: function() {
+					this.section.setExplaination('HTML5 defines rules for embedding SVG and MathML inside a regular HTML document. Support for SVG and MathML are not required though, so bonus points are awarded if your browser supports embedding these two techologies.')
+				},
+
+				t5: function() {
+					var e = document.createElement('div');
+					e.innerHTML = '<svg></svg>';
+					var passed = e.firstChild && "namespaceURI" in e.firstChild && e.firstChild.namespaceURI == 'http://www.w3.org/2000/svg';
+					
+					this.section.setItem({
+						title: 	'SVG in <code>text/html</code>', 
+						url:	'http://www.w3.org/TR/html5/the-canvas-element.html#svg-0',
+						passed:	passed, 
+						bonus: 	passed ? 1 : 0
+					});
+				},
+				
+				t6: function() {
+					var e = document.createElement('div');
+					e.innerHTML = '<math></math>';
+					var passed = e.firstChild && "namespaceURI" in e.firstChild && e.firstChild.namespaceURI == 'http://www.w3.org/1998/Math/MathML';
+					
+					this.section.setItem({
+						title: 	'MathML in <code>text/html</code>', 
+						url:	'http://www.w3.org/TR/html5/the-canvas-element.html#math',
+						passed:	passed, 
+						bonus: 	passed ? 1 : 0
+					});
+				}
+			}
+			
+			
+									
+			function testDevice (results) { this.initialize(results) }			
+			testDevice.prototype = {
+				name: 	'Local devices',
+				count: 	1,
+				
+				initialize: function(results) {
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'<code>device</code> element', 
+						url:	'http://www.whatwg.org/specs/web-apps/current-work/multipage/commands.html#devices',
+						passed:	'type' in document.createElement('device'), 
+						value: 	20
+					});
+				}
+			}
+
+
+			function testVideo (results) { this.initialize(results) }			
+			testVideo.prototype = {
+				name: 	'Video',
+				count: 	7,
+				
+				initialize: function(results) {
+					this.element = document.createElement('video');
+					this.codecs = 0;
+					
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				isIPhone: function() {
+	   				return !!navigator.userAgent.match('iPhone OS') || !!navigator.userAgent.match('iPad');
+				},
+				
+				canPlayType: function(t) {
+					if (this.isIPhone())
+						return this.element.canPlayType(t) == 'probably' || this.element.canPlayType(t) == 'maybe';
+					else 
+						return this.element.canPlayType(t) == 'probably';
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'<code>video</code> element', 
+						url:	'http://www.w3.org/TR/html5/video.html#video',
+						passed:	!!this.element.canPlayType, 
+						value: 	20
+					});
+				},
+
+				t2: function() {
+					this.section.setItem({
+						title: 	'Subtitle support', 
+						url:	'http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#timed-tracks',
+						passed:	'track' in document.createElement('track'), 
+						value: 	5
+					});
+				},
+
+				t3: function() {
+					this.section.setItem({
+						title: 	'Poster image support', 
+						url:	'http://www.w3.org/TR/html5/video.html#video',
+						passed:	'poster' in this.element, 
+						value: 	2
+					});
+				},
+
+				t4: function() {
+					this.section.setExplaination('The following tests go beyond the requirements of the HTML5 specification and are not counted towards the total score. If a browser supports more than one video codec two bonus points are awarded for each additional codec.')
+				},
+					
+				t5: function() {
+					var item = {
+						title: 	'MPEG-4 support', 
+						passed:	!!this.element.canPlayType && this.canPlayType('video/mp4; codecs="mp4v.20.8"')
+					};
+					
+					if (item.passed && this.codecs) item.bonus = 2;
+					if (item.passed) this.codecs++;
+					
+					this.section.setItem(item);
+				},
+
+				t6: function() {
+					var item = {
+						title: 	'H.264 support', 
+						passed:	!!this.element.canPlayType && this.canPlayType('video/mp4; codecs="avc1.42E01E"')
+					};
+					
+					if (item.passed && this.codecs) item.bonus = 2;
+					if (item.passed) this.codecs++;
+					
+					this.section.setItem(item);
+				},
+
+				t7: function() {
+					var item = {
+						title: 	'Ogg Theora support', 
+						passed:	!!this.element.canPlayType && this.canPlayType('video/ogg; codecs="theora"')
+					};
+					
+					if (item.passed && this.codecs) item.bonus = 2;
+					if (item.passed) this.codecs++;
+					
+					this.section.setItem(item);
+				}
+			};
+			
+			function testAudio (results) { this.initialize(results) }			
+			testAudio.prototype = {
+				name: 	'Audio',
+				count: 	6,
+				
+				initialize: function(results) {
+					this.element = document.createElement('audio');
+					this.codecs = 0;
+					
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				isIPhone: function() {
+	   				return !!navigator.userAgent.match('iPhone OS') || !!navigator.userAgent.match('iPad');
+				},
+				
+				canPlayType: function(t) {
+					if (this.isIPhone())
+						return this.element.canPlayType(t) == 'probably' || this.element.canPlayType(t) == 'maybe';
+					else 
+						return this.element.canPlayType(t) == 'probably';
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'<code>audio</code> element', 
+						url:	'http://www.w3.org/TR/html5/video.html#audio',
+						passed:	!!this.element.canPlayType, 
+						value: 	20
+					});
+				},
+
+				t2: function() {
+					this.section.setExplaination('The following tests go beyond the requirements of the HTML5 specification and are not counted towards the total score. If a browser supports more than one audio codec one bonus point is awarded for each additional codec.')
+				},
+
+				t3: function() {
+					var r = false;
+					if (this.element.canPlayType) {
+						var t = this.element.canPlayType('audio/mpeg');
+						if (t == 'maybe') {
+							// We need to check if the browser really supports playing MP3s by loading one and seeing if the
+							// loadedmetadata event is triggered... but for now assume it does support it...
+							r = true;
+						} else if (t == 'probably') {
+							r = true;
+						}
+					}
+				
+					var item = {
+						title: 	'MP3 support', 
+						passed:	r
+					};
+					
+					if (item.passed && this.codecs) item.bonus = 1;
+					if (item.passed) this.codecs++;
+					
+					this.section.setItem(item);
+				},
+
+				t4: function() {
+					var item = {
+						title: 	'Ogg Vorbis support', 
+						passed:	!!this.element.canPlayType && this.canPlayType('audio/ogg; codecs="vorbis"') 
+					};
+					
+					if (item.passed && this.codecs) item.bonus = 1;
+					if (item.passed) this.codecs++;
+					
+					this.section.setItem(item);
+				},
+
+				t5: function() {
+					var item = {
+						title: 	'AAC support', 
+						passed:	!!this.element.canPlayType && this.canPlayType('audio/mp4; codecs="mp4a.40.2"')
+					};
+					
+					if (item.passed && this.codecs) item.bonus = 1;
+					if (item.passed) this.codecs++;
+					
+					this.section.setItem(item);
+				},
+
+				t6: function() {
+					var item = {
+						title: 	'PCM audio support', 
+						passed:	!!this.element.canPlayType && this.canPlayType('audio/wav; codecs="1"')
+					};
+					
+					if (item.passed && this.codecs) item.bonus = 1;
+					if (item.passed) this.codecs++;
+					
+					this.section.setItem(item);
+				}
+			};
+			
+			function testGeolocation (results) { this.initialize(results) }			
+			testGeolocation.prototype = {
+				name: 	'Geolocation',			
+				count: 	1,
+				
+				initialize: function(results) {
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'Geolocation', 
+						url:    'http://dev.w3.org/geo/api/spec-source.html',
+						passed:	!!navigator.geolocation, 
+						value: 	10
+					});
+				}
+			};
+
+			function testCanvas (results) { this.initialize(results) }			
+			testCanvas.prototype = {
+				name: 	'Canvas',
+				url:    'http://www.w3.org/TR/2dcontext/',
+				count: 	3,
+				max:    12,
+				
+				initialize: function(results) {
+					this.canvas = document.createElement('canvas');
+
+					this.section = results.getSection(this.name);
+					var r = 0; for (var i = 1; i <= this.count; i++) { r += this['t' + i](); }
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'<code>canvas</code> element', 
+						url:	'http://www.w3.org/TR/html5/the-canvas-element.html#the-canvas-element',
+						passed:	!!this.canvas.getContext, 
+						value: 	5
+					});
+				},
+
+				t2: function() {
+					this.section.setItem({
+						title: 	'2D context', 
+						url:    'http://www.w3.org/TR/2dcontext/',
+						passed:	this.canvas.getContext && typeof CanvasRenderingContext2D != 'undefined' && this.canvas.getContext('2d') instanceof CanvasRenderingContext2D, 
+						value: 	10
+					});
+				},
+
+				t3: function() {
+					this.section.setItem({
+						title: 	'Text', 
+						url:	'http://www.w3.org/TR/2dcontext/#text',
+						passed:	this.canvas.getContext && typeof this.canvas.getContext('2d').fillText == 'function', 
+						value: 	5
+					});
+				}
+			};
+		
+			function testWebGL (results) { this.initialize(results) }			
+			testWebGL.prototype = {
+				name: 	'WebGL',
+				count: 	1,
+				
+				initialize: function(results) {
+					this.canvas = document.createElement('canvas');
+
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					var element = document.createElement('canvas');
+					var contexts = ['webgl', 'ms-webgl', 'experimental-webgl', 'moz-webgl', 'opera-3d', 'webkit-3d', 'ms-3d', '3d']; 
+					var r = false;
+            
+			        for (var b = -1, len = contexts.length; ++b < len;) {
+			            try {
+			                if (element.getContext(contexts[b])) {
+			                	r = true;
+			                	break;
+			                };	
+			            } catch(e){	}
+			        }
+       				
+ 					this.section.setItem({
+						title: 	'3D context', 
+						url:    'https://cvs.khronos.org/svn/repos/registry/trunk/public/webgl/doc/spec/WebGL-spec.html',
+						passed:	r, 
+						value: 	10
+					});
+				}
+			};
+		
+			function testOffline (results) { this.initialize(results) }			
+			testOffline.prototype = {
+				name: 	'Web applications',
+				count: 	3,
+				
+				initialize: function(results) {
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'Application Cache', 
+						url:	'http://www.w3.org/TR/html5/offline.html#offline',
+						passed:	!!window.applicationCache, 
+						value: 	10
+					});
+				},
+				
+				t2: function() {
+					this.section.setItem({
+						title: 	'Custom scheme handlers', 
+						url:	'http://www.w3.org/TR/html5/webappapis.html#dom-navigator-registerprotocolhandler',
+						passed:	!!window.navigator.registerProtocolHandler, 
+						value: 	2
+					});
+				},
+				
+				t3: function() {
+					this.section.setItem({
+						title: 	'Custom content handlers', 
+						url:	'http://www.w3.org/TR/html5/webappapis.html#dom-navigator-registerprotocolhandler',
+						passed:	!!window.navigator.registerContentHandler, 
+						value: 	2
+					});
+				}
+			};
+
+			function testStorage (results) { this.initialize(results) }			
+			testStorage.prototype = {
+				name: 	'Storage',
+				count: 	5,
+				
+				initialize: function(results) {
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				hasWebSQLDatabase: function() {
+					return !!window.openDatabase;
+				},
+				
+				hasIndexedDB: function() {
+					return 'indexedDB' in window;
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'Session Storage', 
+						url:    'http://www.w3.org/TR/webstorage/#the-sessionstorage-attribute',
+						passed:	'sessionStorage' in window, 
+						value: 	5
+					});
+				},
+
+				t2: function() {
+					this.section.setItem({
+						title: 	'Local Storage', 
+						url:    'http://www.w3.org/TR/webstorage/#the-localstorage-attribute',
+						passed:	'localStorage' in window, 
+						value: 	5
+					});
+				},
+				
+				t3: function() {
+					this.section.setItem({
+						title: 	'IndexedDB', 
+						url:	'http://www.w3.org/TR/IndexedDB/',
+						passed:	this.hasIndexedDB(), 
+						value: 	10
+					});
+				},
+				
+				t4: function() {
+					this.section.setExplaination('The Web SQL Database specification is no longer being updated and has been replaced by IndexedDB. Because at least 3 vendors have shipped implementations of this specification we still include it in this test.')
+				},
+					
+				t5: function() {
+					this.section.setItem({
+						title: 	'Web SQL Database', 
+						url:	'http://www.w3.org/TR/webdatabase/',
+						passed:	this.hasWebSQLDatabase(), 
+						value: 	0,
+						award:  !this.hasIndexedDB() ? 5 : 0	/* only award points if IndexedDB is not implemented */
+					});
+				}			
+			};
+
+			function testWorkers (results) { this.initialize(results) }			
+			testWorkers.prototype = {
+				name: 	'Workers',
+				count: 	1,
+				
+				initialize: function(results) {
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'Web Workers', 
+						url:    'http://www.w3.org/TR/workers/',
+						passed:	!!window.Worker, 
+						value: 	10
+					});
+				}
+			};
+			
+			function testCommunication (results) { this.initialize(results) }			
+			testCommunication.prototype = {
+				name: 	'Communication',
+				count: 	3,
+								
+				initialize: function(results) {
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'Cross-document messaging', 
+						url:    'http://dev.w3.org/html5/postmsg/',
+						passed:	!!window.postMessage, 
+						value: 	5
+					});
+				},
+				
+				t2: function() {
+					this.section.setItem({
+						title: 	'WebSocket', 
+						url:	'http://www.w3.org/TR/websockets/',
+						passed:	'WebSocket' in window, 
+						value: 	10
+					});
+				},
+				
+				t3: function() {
+					this.section.setItem({
+						title: 	'Server-Sent Events', 
+						url:	'http://www.w3.org/TR/eventsource/',
+						passed:	'EventSource' in window, 
+						value: 	10
+					});
+				}
+			};		
+			
+			function testMicrodata (results) { this.initialize(results) }			
+			testMicrodata.prototype = {
+				name: 	'Microdata',
+				count: 	1,
+								
+				initialize: function(results) {
+					var container = document.createElement('div');
+					container.innerHTML = '<div id="microdataItem" itemscope itemtype="http://example.net/user"><p>My name is <span id="microdataProperty" itemprop="name">Elizabeth</span>.</p></div>';
+					document.body.appendChild(container);
+					
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+					
+					document.body.removeChild(container);
+				},
+				
+				t1: function() {
+					var item = document.getElementById('microdataItem');
+					var property = document.getElementById('microdataProperty');
+					var r = true;
+					
+					// Check the element that contains the property
+					r = r && !!('itemValue' in property) && property.itemValue == 'Elizabeth';	
+							
+					// Check the element that is the item
+					r = r && !!('properties' in item) && item.properties['name'][0].itemValue == 'Elizabeth';
+					
+					// Check the getItems method
+					if (!!document.getItems) {
+						var user = document.getItems('http://example.net/user')[0];
+						r = r && user.properties['name'][0].itemValue == 'Elizabeth';
+					}
+												
+					this.section.setItem({
+						title: 	'Microdata', 
+						url:    'http://www.w3.org/TR/microdata/',
+						passed:	r, 
+						value: 	10
+					});
+				}
+			};					
+			
+			function testFiles (results) { this.initialize(results) }			
+			testFiles.prototype = {
+				name: 	'Files',
+				count: 	1,
+								
+				initialize: function(results) {
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					this.section.setItem({
+						title: 	'FileReader API', 
+						url:    'http://dev.w3.org/2006/webapi/FileAPI/#filereader-interface',
+						passed:	'FileReader' in window, 
+						value: 	10
+					});
+				}
+			};
+			
+			function testForm (results) { this.initialize(results) }			
+			testForm.prototype = {
+				name: 	'Forms',
+				count: 	4,
+				
+				initialize: function(results) {
+					this.field = document.createElement('input');
+					
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					var group = this.section.getGroup('<code>input</code> element types');
+					var types = 'search tel url email datetime date month week time datetime-local number range color'.split(' ');
+					var states = 'text-state-and-search telephone url e-mail date-and-time date month week time local-date-and-time number range color'.split(' ');
+					
+					for (var t in types) {
+						this.field.setAttribute('type', types[t]);
+						
+						group.setItem({
+							title: 	'<code>' + types[t] + '</code> type state', 
+							url:	'http://www.w3.org/TR/html5/forms.html#' + states[t] + '-state',
+							passed:	this.field.type != 'text', 
+							value: 	1
+						});
+					}
+				},
+
+				t2: function() {
+					var group = this.section.getGroup('<code>input</code> element attributes');
+					var props = 'autocomplete autofocus list placeholder max min multiple pattern required step'.split(' ');
+						
+					for (var p in props) {
+ 						group.setItem({
+							title: 	'<code>' + props[p] + '</code> attribute', 
+							url:	'http://www.w3.org/TR/html5/forms.html#the-' + props[p] + '-attribute',
+							passed:	!!(props[p] in this.field), 
+							value: 	1
+						});
+        			}
+				},
+
+				t3: function() {
+					var group = this.section.getGroup('Other form elements');
+
+					var element = document.createElement('datalist');
+					group.setItem({
+						title: 	'<code>datalist</code> element', 
+						url:	'http://www.w3.org/TR/html5/forms.html#the-datalist-element',
+						passed:	(typeof HTMLDataListElement != 'undefined' && element instanceof HTMLDataListElement) || element.childNodes.length, 
+						value: 	1
+					});
+
+					var element = document.createElement('keygen');
+					group.setItem({
+						title: 	'<code>keygen</code> element', 
+						url:	'http://www.w3.org/TR/html5/forms.html#the-keygen-element',
+						passed:	(typeof HTMLKeygenElement != 'undefined' && element instanceof HTMLKeygenElement) || element.childNodes.length, 
+						value: 	1
+					});
+					
+					var element = document.createElement('output');
+					group.setItem({
+						title: 	'<code>output</code> element', 
+						url:	'http://www.w3.org/TR/html5/forms.html#the-output-element',
+						passed:	typeof HTMLOutputElement != 'undefined' && element instanceof HTMLOutputElement, 
+						value: 	1
+					});
+
+					var element = document.createElement('progress');
+					group.setItem({
+						title: 	'<code>progress</code> element', 
+						url:	'http://www.w3.org/TR/html5/forms.html#the-progress-element',
+						passed:	typeof HTMLProgressElement != 'undefined' && element instanceof HTMLProgressElement, 
+						value: 	1
+					});
+
+					var element = document.createElement('meter');
+					group.setItem({
+						title: 	'<code>meter</code> element', 
+						url:	'http://www.w3.org/TR/html5/forms.html#the-meter-element',
+						passed:	typeof HTMLMeterElement != 'undefined' && element instanceof HTMLMeterElement, 
+						value: 	1
+					});
+				},
+				
+				t4: function() {
+					var element = document.createElement('input');
+					
+					this.section.setItem({
+						title: 	'Form validation', 
+						url:	'http://www.w3.org/TR/html5/forms.html#the-constraint-validation-api',
+						passed:	'checkValidity' in element, 
+						value: 	6
+					});
+				}				
+			};
+			
+			function testElements (results) { this.initialize(results) }			
+			testElements.prototype = {
+				name: 	'Elements',
+				count: 	7,
+				
+				initialize: function(results) {
+					this.section = results.getSection('Elements');
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				getStyle: function(elem, name) {
+				    if (elem.style[name]) {
+				        return elem.style[name];
+				    } else if (elem.currentStyle) {
+				        return elem.currentStyle[name];
+				    }
+				    else if (document.defaultView && document.defaultView.getComputedStyle) {
+				        name = name.replace(/([A-Z])/g, "-$1");
+				        name = name.toLowerCase();
+				        s = document.defaultView.getComputedStyle(elem, "");
+				        return s && s.getPropertyValue(name);
+				    } else {
+				        return null;
+				    }
+				},
+				
+				isBlock: function(element) {
+					return this.getStyle(element, 'display') == 'block';
+				},
+				
+				closesImplicitly: function(name) {
+					var foo = document.createElement('div');
+					foo.innerHTML = '<p><' + name + '></' + name + '>';
+					return foo.childNodes.length == 2;
+				},
+				
+				t1: function() {
+					var element = document.createElement('div');
+					element.setAttribute('data-test', 'test');
+					
+					this.section.setItem({
+						title: 	'Embedding custom non-visible data', 
+						url:	'http://www.w3.org/TR/html5/dom.html#embedding-custom-non-visible-data',
+						passed:	'dataset' in element, 
+						value: 	4
+					});
+				},
+				
+				t2: function() {
+					var group = this.section.getGroup('Section elements');
+					var elements = 'section nav article aside hgroup header footer'.split(' ');
+					
+					for (var e in elements) {
+						var element = document.createElement(elements[e]);
+						document.body.appendChild(element);
+
+ 						group.setItem({
+							title: 	'<code>' + elements[e] + '</code> element', 
+							url:	'http://www.w3.org/TR/html5/semantics.html#the-' + elements[e] + '-element',
+							passed:	typeof HTMLElement != 'undefined' && element instanceof HTMLElement && this.isBlock(element) && this.closesImplicitly(elements[e]), 
+							value: 	1
+						});
+
+						document.body.removeChild(element);
+					}
+				},
+
+				t3: function() {
+					var group = this.section.getGroup('Grouping content elements');
+					var elements = 'figure figcaption'.split(' ');
+					
+					for (var e in elements) {
+						var element = document.createElement(elements[e]);
+						document.body.appendChild(element);
+
+ 						group.setItem({
+							title: 	'<code>' + elements[e] + '</code> element', 
+							url:	'http://www.w3.org/TR/html5/semantics.html#the-' + elements[e] + '-element',
+							passed:	typeof HTMLElement != 'undefined' && element instanceof HTMLElement && this.isBlock(element) && (elements[e] != 'figure' || this.closesImplicitly(elements[e])), 
+							value: 	1
+						});
+
+						document.body.removeChild(element);
+					}
+				},
+
+				t4: function() {
+					var group = this.section.getGroup('Text-level semantic elements');
+					
+					var element = document.createElement('mark');
+					document.body.appendChild(element);
+
+					group.setItem({
+						title: 	'<code>mark</code> element', 
+						url:	'http://www.w3.org/TR/html5/text-level-semantics.html#the-mark-element',
+						passed:	typeof HTMLElement != 'undefined' && element instanceof HTMLElement && (color = this.getStyle(element, 'background-color')) && (color == 'yellow' || color == 'rgb(255, 255, 0)'), 
+						value: 	1
+					});
+
+					document.body.removeChild(element);
+					
+					var container = document.createElement('div');
+					document.body.appendChild(container);
+					container.innerHTML = "<ruby id='ruby'><rp id='rp'></rp><rt id='rt'></rt></ruby>";
+					var element = document.getElementById('ruby');
+
+					group.setItem({
+						title: 	'<code>ruby</code> element', 
+						url:	'http://www.w3.org/TR/html5/text-level-semantics.html#the-ruby-element',
+						passed:	element && typeof HTMLElement != 'undefined' && element instanceof HTMLElement && this.getStyle(element, 'display') == 'ruby', 
+						value: 	1
+					});
+
+					var element = document.getElementById('rt');
+
+					group.setItem({
+						title: 	'<code>rt</code> element', 
+						url:	'http://www.w3.org/TR/html5/text-level-semantics.html#the-rt-element',
+						passed:	element && typeof HTMLElement != 'undefined' && element instanceof HTMLElement && this.getStyle(element, 'display') == 'ruby-text', 
+						value: 	1
+					});
+
+					var element = document.getElementById('rp');
+
+					group.setItem({
+						title: 	'<code>rp</code> element', 
+						url:	'http://www.w3.org/TR/html5/text-level-semantics.html#the-rp-element',
+						passed:	element && typeof HTMLElement != 'undefined' && element instanceof HTMLElement && this.getStyle(element, 'display') == 'hidden', 
+						value: 	1
+					});
+					
+					document.body.removeChild(container);
+					
+					var element = document.createElement('time');
+
+					group.setItem({
+						title: 	'<code>time</code> element', 
+						url:	'http://www.w3.org/TR/html5/text-level-semantics.html#the-time-element',
+						passed:	typeof HTMLTimeElement != 'undefined' && element instanceof HTMLTimeElement, 
+						value: 	1
+					});
+				},
+				
+				t5: function() {
+					var element = document.createElement('div');
+					
+					this.section.setItem({
+						title: 	'<code>hidden</code> attribute', 
+						url:	'http://www.w3.org/TR/html5/editing.html#the-hidden-attribute',
+						passed:	'hidden' in element, 
+						value: 	1
+					});
+				},
+				
+				t6: function() {
+					var element = document.createElement('div');
+					
+					this.section.setItem({
+						title: 	'Scroll into view', 
+						url:	'http://www.w3.org/TR/html5/editing.html#scrolling-elements-into-view',
+						passed:	!!element.scrollIntoView, 
+						value: 	1
+					});
+				},
+
+				t7: function() {
+					var element = document.createElement('div');
+					
+					this.section.setItem({
+						title: 	'<code>contenteditable</code> attribute', 
+						url:	'http://www.w3.org/TR/html5/editing.html#contenteditable',
+						passed:	'contentEditable' in element, 
+						value: 	10
+					});
+				}
+			};		
+			
+			function testInteraction (results) { this.initialize(results) }			
+			testInteraction.prototype = {
+				name: 	'User interaction',
+				count: 	4,
+				
+				initialize: function(results) {
+					this.section = results.getSection(this.name);
+					for (var i = 1; i <= this.count; i++) { this['t' + i](); }
+				},
+				
+				t1: function() {
+					var element = document.createElement('div');
+					
+					this.section.setItem({
+						title: 	'Drag and drop', 
+						url:	'http://www.w3.org/TR/html5/editing.html#dnd',
+						passed:	'draggable' in element, 
+						value: 	10
+					});
+				},
+				
+				t2: function() {
+					this.section.setItem({
+						title: 	'Undo history',
+						url:	'http://www.w3.org/TR/html5/editing.html#undo', 
+						passed:	!!window.undoManager,
+						value: 	5
+					});
+				},
+				
+				t3: function() {
+					this.section.setItem({
+						title: 	'Session history', 
+						url:	'http://www.w3.org/TR/html5/history.html#history',
+						passed:	!!(window.history && history.pushState && history.popState), 
+						value: 	5
+					});
+				},
+				
+				t4: function() {
+					this.section.setItem({
+						title: 	'Text selection', 
+						url:	'http://www.w3.org/TR/html5/editing.html#selection',
+						passed:	!!window.getSelection, 
+						value: 	5
+					});
+				}				
+			};
+
+			function startTest() {
+				var t = new test('results', 'total', function(r) {
+				
+					_bTestResults = {
+					  'Total score': r.score,
+					  'Bonus points': r.bonus
+					};
+					
+					for (s in r.sections) {
+						_bTestResults[r.sections[s].name] = r.sections[s].value;
+						
+						for (i in r.sections[s].items) {
+							_bTestResults[r.sections[s].items[i].name] = r.sections[s].items[i].passed ? 1 : 0;
+						}
+					}
+					
+					// Beacon the results to Browserscope.
+					(function() {
+					  var _bTestKey = 'agt1YS1wcm9maWxlcnIMCxIEVGVzdBim13UM';
+					  var _bScript = document.createElement('script');
+					  _bScript.src = 'http://www.browserscope.org/user/beacon/' + _bTestKey + '?callback=_bBeaconComplete';
+					  _bScript.setAttribute('async', 'true');
+					  var scripts = document.getElementsByTagName('script');
+					  var lastScript = scripts[scripts.length - 1];
+					  lastScript.parentNode.insertBefore(_bScript, lastScript);
+					})();
+				});
+			}
+			
+			
+			/* Callback function from browserscope */
+			var _bBeaconComplete = function() {
+				var parameters = {}
+				
+				var items = window.location.search.substr(1).split('&');
+				for (i in items) { var item = items[i].split('='); parameters[item[0]] = item[1]; }
+				
+				/* Check for continue parameter and redirect if the source is browserscope */
+				if (parameters['continue'] && parameters['source'] && parameters['source'] == 'browserscope') {
+					window.location = parameters['continue'];
+				}
+			};
+			
+
+			
+		//-->
+		</script>
+	</body>
+</html>
