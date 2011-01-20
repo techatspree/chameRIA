@@ -1,0 +1,11 @@
+target
+.project
+.classpath
+.settings
+chameleon-cache
+chameria-it-runtime/application
+chameria-it-runtime/runtime
+chameria-it-runtime/core
+chameria-it-runtime/qt
+chameria-it-runtime/log
+chameria-launcher/log
