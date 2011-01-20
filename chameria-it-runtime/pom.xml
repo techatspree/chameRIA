@@ -1,0 +1,351 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>de.akquinet.gomobile.chameria</groupId>
+    <artifactId>chameria-reactor</artifactId>
+    <version>1.5.0-SNAPSHOT</version>
+  </parent>
+  <groupId>de.akquinet.gomobile.chameria</groupId>
+  <artifactId>chameria-it-runtime</artifactId>
+  <version>1.5.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>chameria - Integration Tests Runtime</name>
+
+
+  <!-- Default Properties -->
+  <properties>
+    <!-- Core directory -->
+    <core.dir>core</core.dir>
+
+    <!-- Runtime directory -->
+    <runtime.dir>runtime</runtime.dir>
+
+    <!-- Application directory -->
+    <application.dir>application</application.dir>
+
+    <!-- Deploy directory -->
+    <deploy.dir>deploy</deploy.dir>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <!-- Define three profiles : mac, linux and win The correct profile is picked
+    up, but this is overidable with mvn -Pwin,!linux (sometime ! must be escaped
+    \!) -->
+  <profiles>
+    <profile>
+      <id>mac</id>
+      <activation>
+        <os>
+          <family>mac</family>
+        </os>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>de.akquinet.gomobile.chameria</groupId>
+          <artifactId>chameria-launcher</artifactId>
+          <classifier>mac-distribution</classifier>
+          <version>${project.version}</version>
+          <type>zip</type>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>win</id>
+      <activation>
+        <os>
+          <family>windows</family>
+        </os>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>de.akquinet.gomobile.chameria</groupId>
+          <artifactId>chameria-launcher</artifactId>
+          <classifier>win-distribution</classifier>
+          <version>${project.version}</version>
+          <type>zip</type>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>linux</id>
+      <activation>
+        <os>
+          <family>linux</family>
+        </os>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>de.akquinet.gomobile.chameria</groupId>
+          <artifactId>chameria-launcher</artifactId>
+          <classifier>linux-distribution</classifier>
+          <version>${project.version}</version>
+          <type>zip</type>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+
+
+  <dependencies>
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <version>1.8.5</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.knopflerfish</groupId>
+      <artifactId>http_all</artifactId>
+      <version>2.1.4</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>org.ow2.chameleon.commons.servlet-api
+            </artifactId>
+      <version>2.5.0-0002</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.log</artifactId>
+      <version>1.0.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.prefs</artifactId>
+      <version>1.0.4</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.webconsole</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.ipojo.webconsole</artifactId>
+      <version>1.4.4</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.metatype</artifactId>
+      <version>1.0.4</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>org.ow2.chameleon.commons.io</artifactId>
+      <version>1.4.0-0002</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-collections</groupId>
+      <artifactId>org.ow2.chameleon.commons.collections
+            </artifactId>
+      <version>3.2.1-0002</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>org.ow2.chameleon.commons.lang</artifactId>
+      <version>2.4.0-0002</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient-osgi</artifactId>
+      <version>4.0</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpcore-osgi</artifactId>
+      <version>4.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>net.sf.json-lib</groupId>
+      <artifactId>org.ow2.chameleon.commons.json-lib</artifactId>
+      <version>2.3-0002</version>
+      <classifier>jdk13</classifier>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>org.ow2.chameleon.commons.json</artifactId>
+      <version>20090911-0002</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>org.ow2.chameleon.commons.beanutils</artifactId>
+      <version>1.8.0-0002</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>org.ow2.chameleon.commons.logging</artifactId>
+      <version>1.1.1-0002</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>de.akquinet.gomobile.chameria</groupId>
+      <artifactId>webview-factory</artifactId>
+      <version>1.5.0-SNAPSHOT</version>
+      <scope>provided</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>${project.groupId}</groupId>
+          <artifactId>chameria-launcher</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- HTML 5 tests -->
+    <dependency>
+      <groupId>de.akquinet.gomobile.chameria</groupId>
+      <artifactId>chameria-it-html5</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-runtime</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <includeScope>provided</includeScope>
+              <outputDirectory>${project.build.directory}/${runtime.dir}</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+              <excludeTransitive>true</excludeTransitive>
+              <excludeGroupIds>${project.groupId}</excludeGroupIds>
+            </configuration>
+          </execution>
+
+          <execution>
+            <id>copy-application</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <includeScope>provided</includeScope>
+              <outputDirectory>${project.build.directory}/${application.dir}</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+              <excludeTransitive>true</excludeTransitive>
+              <includeGroupIds>${project.groupId}</includeGroupIds>
+            </configuration>
+          </execution>
+
+          <execution>
+            <!-- Unzip the correct dependency -->
+            <id>unzip-chameria</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>unpack-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+              <excludeTransitive>true</excludeTransitive>
+              <includeArtifactIds>chameria-launcher</includeArtifactIds>
+              <includeGroupIds>de.akquinet.gomobile.chameria</includeGroupIds>
+              <includeTypes>zip</includeTypes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.3</version>
+        <executions>
+          <execution>
+            <id>copy-deploy</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/deploy</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/main/resources/deploy</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-conf</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/conf</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/main/resources/conf</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <tasks>
+                <!-- Dependency plugin discards file permissions so we need to set
+                  them back manually -->
+                <chmod dir="." perm="ugo+rx" includes="*.sh" />
+              </tasks>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
