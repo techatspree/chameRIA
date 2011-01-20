@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0
+                              http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+  <formats>
+    <format>zip</format>
+  </formats>
+  <id>win-distribution</id>
+  
+  <!-- do not create a root directory -->
+  <includeBaseDirectory>false</includeBaseDirectory>
+  
+  <fileSets>
+  	<!-- Dependencies -->
+    <fileSet>
+      <directory>target/core</directory>
+      <outputDirectory>core</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+    </fileSet>
+	
+	<!-- launcher jar -->
+	<fileSet>
+      <directory>target</directory>
+      <outputDirectory>core</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+	  <includes>
+        <include>*.jar</include>
+       </includes>
+    </fileSet>
+	
+	<!-- Scripts -->
+    <fileSet>
+      <directory>target/classes</directory>
+      <outputDirectory>/</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+      <includes>
+		<include>*.bat</include>
+       </includes>
+       <fileMode>777</fileMode>
+    </fileSet>
+	
+	<!-- Copy System specific QT -->
+	<fileSet>
+      <directory>target/win</directory>
+      <outputDirectory>qt</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+	  <excludes>
+	  	<exclude>META-INF*</exclude>
+		<exclude>META-INF/*</exclude>
+		<exclude>qtjambi-deployment.xml</exclude>
+	   </excludes>
+    </fileSet>
+	<!-- Copy QT-Common -->
+	<fileSet>
+      <directory>target/qt-common</directory>
+      <outputDirectory>qt</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+    </fileSet>
+    	
+	<!-- Licenses -->
+	<fileSet>
+      <directory>.</directory>
+      <outputDirectory>/</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+      <includes>
+        <include>LICENSE*</include>
+		<include>NOTICE</include>
+       </includes>
+    </fileSet>
+  </fileSets>
+</assembly>
