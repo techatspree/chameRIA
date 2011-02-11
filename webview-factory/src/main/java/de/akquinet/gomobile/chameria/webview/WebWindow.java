@@ -1,10 +1,12 @@
 package de.akquinet.gomobile.chameria.webview;
 
 import java.io.File;
+import java.util.List;
 
 import com.trolltech.qt.core.QUrl;
 import com.trolltech.qt.gui.QApplication;
 import com.trolltech.qt.gui.QCloseEvent;
+import com.trolltech.qt.gui.QDropEvent;
 import com.trolltech.qt.gui.QMainWindow;
 import com.trolltech.qt.gui.QPainter.RenderHint;
 import com.trolltech.qt.gui.QWidget;
@@ -17,6 +19,17 @@ import com.trolltech.qt.webkit.QWebView;
  * It's the main window.
  */
 public class WebWindow extends QMainWindow {
+
+    @Override
+    protected void dropEvent(QDropEvent arg__1) {
+        super.dropEvent(arg__1);
+
+        arg__1.accept();
+        List<QUrl> list = arg__1.mimeData().urls();
+        for (QUrl url : list) {
+            System.out.println(url.toString());
+        }
+    }
 
     /**
      * The main web view.
@@ -95,6 +108,10 @@ public class WebWindow extends QMainWindow {
                 open();
             }
         });
+
+        // Enable drag and drop
+        acceptDrops();
+
     }
 
 
