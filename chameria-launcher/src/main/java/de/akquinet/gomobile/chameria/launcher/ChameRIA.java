@@ -181,7 +181,6 @@ public class ChameRIA extends Chameleon {
         public synchronized void serviceChanged(ServiceEvent ev) {
             // We need to synchronize to avoid concurrent activation.
             if (m_framework != null  && ev.getType() == ServiceEvent.REGISTERED) {
-                System.out.println("Activation service detected");
                 ActivationService svc = ((ActivationService) m_framework.getBundleContext()
                         .getService(ev.getServiceReference()));
                 if (! activations.contains(svc)) {

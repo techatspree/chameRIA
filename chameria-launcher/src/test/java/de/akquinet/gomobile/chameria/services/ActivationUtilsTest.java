@@ -3,6 +3,8 @@ package de.akquinet.gomobile.chameria.services;
 import org.junit.Assert;
 import org.junit.Test;
 
+import de.akquinet.gomobile.chameria.services.ActivationUtils;
+
 public class ActivationUtilsTest {
     
     @Test
