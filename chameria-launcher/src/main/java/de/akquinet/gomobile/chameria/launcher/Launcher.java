@@ -189,8 +189,12 @@ public class Launcher {
         String runtime = getRuntime(args);
         String fileinstall = getDeployDirectory(args);
         String config = getProps(args);
+        if (config == null  || ! new File(config).exists()) {
+            return new ChameRIA(core, debug, app, runtime, fileinstall, null);
+        } else {
+            return new ChameRIA(core, debug, app, runtime, fileinstall, config);
+        }
 
-        return new ChameRIA(core, debug, app, runtime, fileinstall, config);
     }
 
     /**

@@ -54,7 +54,7 @@ public class ChameRIA extends Chameleon {
         super(core, debug, runtime, app, fileinstall, config, null);
     }
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     @Override
     public Map<String, String> getProperties(Map map) throws Exception {
         Map<String, String> conf = new HashMap<String, String>(super.getProperties(map));
@@ -73,21 +73,21 @@ public class ChameRIA extends Chameleon {
                 cache = new File(install, "chameleon-cache");
                 conf.put("org.osgi.framework.storage", cache.getAbsolutePath());
             } else {
-            	// The installation dir does not exist...
-            	String storage = conf.get("org.osgi.framework.storage");
-            	cache = new File(storage);
+                // The installation dir does not exist...
+                String storage = conf.get("org.osgi.framework.storage");
+                cache = new File(storage);
             }
         } else {
-        	// the org.osgi.framework.storage is already set.
-        	String storage = conf.get("org.osgi.framework.storage");
-        	cache = new File(storage);
+            // the org.osgi.framework.storage is already set.
+            String storage = conf.get("org.osgi.framework.storage");
+            cache = new File(storage);
         }
 
         return conf;
     }
 
 
-	public static File detectLocation() {
+    public static File detectLocation() {
         String location = System.getProperty(CHAMERIA_INSTALL_LOCATION_PROP);
 
         location =
@@ -98,21 +98,21 @@ public class ChameRIA extends Chameleon {
     }
 
     public Framework start(String[] args) throws BundleException {
-    	File lock = new File(cache, ".lock");
-    	if (lock.exists()) {
-    		return null;
-    	}
+        File lock = new File(cache, ".lock");
+        if (lock.exists()) {
+            return null;
+        }
 
         m_framework =  start();
 
         // To avoid race condition for the activation service
         // this must be synchronized
         synchronized (this) {
-        	try {
+            try {
                 m_framework.getBundleContext().addServiceListener(new ActivationListener(),
                         "(" + Constants.OBJECTCLASS + "=" + ActivationService.class.getName() + ")");
             } catch (InvalidSyntaxException e) {
-            	// Cannot happen
+                // Cannot happen
             }
             // As we're synchronized we're sure that events will be delivered once the lock
             // is released.
@@ -133,11 +133,11 @@ public class ChameRIA extends Chameleon {
 
         if (refs != null) {
             for (ServiceReference ref : refs) {
-            	ActivationService svc = (ActivationService) context.getService(ref);
-            	if (! activations.contains(svc)) {
-            		svc.activation(args);
-            		activations.add(svc);
-            	}
+                ActivationService svc = (ActivationService) context.getService(ref);
+                if (! activations.contains(svc)) {
+                    svc.activation(args);
+                    activations.add(svc);
+                }
             }
         } else {
             System.out.println("No Activation service detected");
@@ -145,12 +145,12 @@ public class ChameRIA extends Chameleon {
     }
 
     @Override
-	public Framework start() throws BundleException {
-    	createLockFile();
-		return super.start();
-	}
+    public Framework start() throws BundleException {
+        createLockFile();
+        return super.start();
+    }
 
-	@Override
+    @Override
     public void stop() throws BundleException, InterruptedException {
         if (m_framework != null  && m_framework.getBundleContext() != null) {
             deactivate(m_framework.getBundleContext());
@@ -179,20 +179,20 @@ public class ChameRIA extends Chameleon {
 
     private class ActivationListener implements ServiceListener {
         public synchronized void serviceChanged(ServiceEvent ev) {
-        	// We need to synchronize to avoid concurrent activation.
+            // We need to synchronize to avoid concurrent activation.
             if (m_framework != null  && ev.getType() == ServiceEvent.REGISTERED) {
                 System.out.println("Activation service detected");
                 ActivationService svc = ((ActivationService) m_framework.getBundleContext()
                         .getService(ev.getServiceReference()));
                 if (! activations.contains(svc)) {
-                	svc.activation(m_args);
-                	activations.add(svc);
+                    svc.activation(m_args);
+                    activations.add(svc);
                 }
                 return;
             }
 
             if (m_framework != null  && ev.getType() == ServiceEvent.UNREGISTERING) {
-            	activations.remove(m_framework.getBundleContext()
+                activations.remove(m_framework.getBundleContext()
                         .getService(ev.getServiceReference()));
             }
         }
@@ -201,7 +201,7 @@ public class ChameRIA extends Chameleon {
     private void createLockFile() {
         File lock = new File(cache, ".lock");
         if (! cache.exists()) {
-        	cache.mkdirs();
+            cache.mkdirs();
         }
         try {
             FileWriter writer = new FileWriter(lock);

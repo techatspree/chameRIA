@@ -7,65 +7,80 @@
     <format>zip</format>
   </formats>
   <id>linux-distribution</id>
-  
+
   <!-- do not create a root directory -->
   <includeBaseDirectory>false</includeBaseDirectory>
-  
+
   <fileSets>
-  	<!-- Dependencies -->
+    <!-- Dependencies -->
     <fileSet>
       <directory>target/core</directory>
       <outputDirectory>core</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
+      <excludes>
+          <exclude>*-sources.jar</exclude>
+          <exclude>*-javadoc.jar</exclude>
+          <exclude>*.zip</exclude>
+      </excludes>
     </fileSet>
-	
-	<!-- launcher jar -->
-	<fileSet>
+
+    <!-- launcher jar -->
+    <fileSet>
       <directory>target</directory>
       <outputDirectory>core</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
-	  <includes>
-        <include>*.jar</include>
-       </includes>
+      <includes>
+          <include>*.jar</include>
+      </includes>
+      <excludes>
+          <exclude>*-sources.jar</exclude>
+          <exclude>*-javadoc.jar</exclude>
+      </excludes>
     </fileSet>
-	
-	<!-- Scripts -->
+
+    <fileSet>
+      <directory>target/runtime</directory>
+      <outputDirectory>runtime</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+    </fileSet>
+
+  <!-- Scripts -->
     <fileSet>
       <directory>target/classes</directory>
       <outputDirectory>/</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
       <includes>
-		<include>*linux*.sh</include>
+    <include>*linux*.sh</include>
        </includes>
        <fileMode>777</fileMode>
     </fileSet>
-	
-	<!-- Copy System specific QT -->
-	<fileSet>
+
+  <!-- Copy System specific QT -->
+  <fileSet>
       <directory>target/linux</directory>
       <outputDirectory>qt</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
-	  <excludes>
-	  	<exclude>META-INF*</exclude>
-		<exclude>META-INF/*</exclude>
-		<exclude>qtjambi-deployment.xml</exclude>
-	   </excludes>
+    <excludes>
+      <exclude>META-INF*</exclude>
+    <exclude>META-INF/*</exclude>
+    <exclude>qtjambi-deployment.xml</exclude>
+     </excludes>
     </fileSet>
-	<!-- Copy QT-Common -->
-	<fileSet>
+  <!-- Copy QT-Common -->
+  <fileSet>
       <directory>target/qt-common</directory>
       <outputDirectory>qt</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
     </fileSet>
-    	
-	<!-- Licenses -->
-	<fileSet>
+
+  <!-- Licenses -->
+  <fileSet>
       <directory>.</directory>
       <outputDirectory>/</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
       <includes>
         <include>LICENSE*</include>
-		<include>NOTICE</include>
+    <include>NOTICE</include>
        </includes>
     </fileSet>
   </fileSets>

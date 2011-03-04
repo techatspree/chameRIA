@@ -16,7 +16,7 @@
 
   <properties>
     <chameria.version>${project.version}</chameria.version>
-    <chameleon.version>0.2.6</chameleon.version>
+    <chameleon.version>0.3.0-SNAPSHOT</chameleon.version>
     <logback.version>0.9.24</logback.version>
     <slf4j.version>1.6.1</slf4j.version>
     <felix.version>3.0.2</felix.version>
@@ -76,48 +76,6 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- Core -->
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.apache.felix.framework</artifactId>
-      <version>3.0.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.apache.felix.shell</artifactId>
-      <version>1.4.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.apache.felix.shell.tui</artifactId>
-      <version>1.4.1</version>
-    </dependency>
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.compendium</artifactId>
-      <version>4.2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.apache.felix.configadmin</artifactId>
-      <version>1.2.4</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.apache.felix.fileinstall</artifactId>
-      <version>3.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.apache.felix.ipojo</artifactId>
-      <version>1.6.2</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.felix</groupId>
-      <artifactId>org.apache.felix.ipojo.arch</artifactId>
-      <version>1.6.0</version>
-    </dependency>
-
     <!-- TinyBundle -->
     <dependency>
       <groupId>org.ops4j.pax.swissbox</groupId>
@@ -137,33 +95,26 @@
       <version>1.2.0</version>
       <scope>test</scope>
     </dependency>
-
-    <!-- mockito -->
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
-      <version>1.8.5</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>org.ow2.chameleon.testing</groupId>
-      <artifactId>tinybundles-ipojo</artifactId>
-      <version>0.2.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.ow2.chameleon.testing</groupId>
-      <artifactId>osgi-helpers</artifactId>
-      <version>0.2.0</version>
-      <scope>test</scope>
-    </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
       <version>1.1.1</version>
       <type>jar</type>
       <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.http.bundle</artifactId>
+      <version>2.2.0</version>
+      <type>jar</type>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>de.akquinet.gomobile.chameria</groupId>
+      <artifactId>webview-factory</artifactId>
+      <version>1.5.0-SNAPSHOT</version>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 
@@ -207,8 +158,11 @@
           <tarLongFileMode>gnu</tarLongFileMode>
           <descriptors>
             <descriptor>src/main/assembly/assembly-win.xml</descriptor>
+            <descriptor>src/main/assembly/assembly-win-full.xml</descriptor>
             <descriptor>src/main/assembly/assembly-mac.xml</descriptor>
+            <descriptor>src/main/assembly/assembly-mac-full.xml</descriptor>
             <descriptor>src/main/assembly/assembly-linux.xml</descriptor>
+            <descriptor>src/main/assembly/assembly-linux-full.xml</descriptor>
           </descriptors>
         </configuration>
       </plugin>
@@ -232,6 +186,19 @@
               <overWriteSnapshots>true</overWriteSnapshots>
               <includeArtifactIds>core</includeArtifactIds>
               <includeClassifiers>distribution</includeClassifiers>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-webview</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/runtime</outputDirectory>
+              <overWriteReleases>false</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+              <includeArtifactIds>webview-factory,org.apache.felix.http.bundle</includeArtifactIds>
             </configuration>
           </execution>
           <execution>

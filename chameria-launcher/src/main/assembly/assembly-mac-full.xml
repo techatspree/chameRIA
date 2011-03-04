@@ -6,7 +6,7 @@
   <formats>
     <format>zip</format>
   </formats>
-  <id>win-distribution</id>
+  <id>mac-full-distribution</id>
 
   <!-- do not create a root directory -->
   <includeBaseDirectory>false</includeBaseDirectory>
@@ -42,48 +42,53 @@
       <directory>target/runtime</directory>
       <outputDirectory>runtime</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
-      <includes>
-          <include>*webview*</include> <!-- include the webview factory  -->
-      </includes>
     </fileSet>
 
-  <!-- Scripts -->
+    <!-- Scripts -->
     <fileSet>
       <directory>target/classes</directory>
       <outputDirectory>/</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
       <includes>
-    <include>*.bat</include>
-       </includes>
-       <fileMode>777</fileMode>
+      <include>*mac*.sh</include>
+      <include>chameleon.properties</include>
+      </includes>
+      <fileMode>777</fileMode>
     </fileSet>
 
-  <!-- Copy System specific QT -->
-  <fileSet>
-      <directory>target/win</directory>
+    <!-- Deploy -->
+    <fileSet>
+      <directory>target/classes/deploy</directory>
+      <outputDirectory>deploy</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+    </fileSet>
+
+    <!-- Copy System specific QT -->
+    <fileSet>
+      <directory>target/mac</directory>
       <outputDirectory>qt</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
-    <excludes>
+      <excludes>
       <exclude>META-INF*</exclude>
-    <exclude>META-INF/*</exclude>
-    <exclude>qtjambi-deployment.xml</exclude>
+      <exclude>META-INF/*</exclude>
+      <exclude>qtjambi-deployment.xml</exclude>
      </excludes>
     </fileSet>
-  <!-- Copy QT-Common -->
-  <fileSet>
+    <!-- Copy QT-Common -->
+    <fileSet>
       <directory>target/qt-common</directory>
       <outputDirectory>qt</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
     </fileSet>
 
-  <!-- Licenses -->
-  <fileSet>
+    <!-- Licenses -->
+    <fileSet>
       <directory>.</directory>
       <outputDirectory>/</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
       <includes>
         <include>LICENSE*</include>
-    <include>NOTICE</include>
+        <include>NOTICE</include>
        </includes>
     </fileSet>
   </fileSets>
