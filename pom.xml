@@ -196,6 +196,7 @@
     <module>webview-factory</module>
     <module>chameria-launcher</module>
     <module>web-exposer</module>
+    <module>chameria-service</module>
   </modules>
 
 
