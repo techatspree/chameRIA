@@ -98,10 +98,8 @@
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.1.1</version>
-            <type>jar</type>
-            <scope>test</scope>
+            <artifactId>org.ow2.chameleon.commons.logging</artifactId>
+            <version>1.1.1-0002</version>
         </dependency>
 
         <dependency>
@@ -121,6 +119,26 @@
             <groupId>de.akquinet.gomobile.chameria</groupId>
             <artifactId>chameria-service</artifactId>
             <version>1.5.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+          <version>2.0.1</version>
+          <type>jar</type>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>org.ow2.chameleon.json</groupId>
+          <artifactId>json-service-json-lib</artifactId>
+          <version>0.4.0</version>
+          <scope>compile</scope>
+        </dependency>
+        <dependency>
+          <groupId>commons-beanutils</groupId>
+          <artifactId>commons-beanutils</artifactId>
+          <version>1.8.3</version>
+          <type>jar</type>
+          <scope>compile</scope>
         </dependency>
     </dependencies>
 
@@ -204,7 +222,7 @@
                             <outputDirectory>${project.build.directory}/runtime</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
-                            <includeArtifactIds>webview-factory,org.apache.felix.http.bundle</includeArtifactIds>
+                            <includeArtifactIds>webview-factory,org.apache.felix.http.bundle,commons-io,commons-beanutils,commons-collections,commons-lang,org.ow2.chameleon.commons.logging,json-service-json-lib</includeArtifactIds>
                         </configuration>
                     </execution>
                     <execution>
