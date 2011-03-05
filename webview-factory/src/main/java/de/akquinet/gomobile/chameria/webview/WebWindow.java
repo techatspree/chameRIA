@@ -106,12 +106,16 @@ public class WebWindow extends QMainWindow {
                         RenderHint.TextAntialiasing,
                         RenderHint.NonCosmeticDefaultPen);
                 open();
+                repaint();
             }
         });
 
         // Enable drag and drop
         acceptDrops();
 
+        show();
+        raise();
+        activateWindow();
     }
 
 

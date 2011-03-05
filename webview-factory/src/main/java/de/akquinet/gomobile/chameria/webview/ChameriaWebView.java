@@ -98,6 +98,7 @@ public class ChameriaWebView extends QWebView {
      */
     public void loadDone() {
         m_logger.info("Loading done... " + url());
+        repaint();
     }
 
     /**
