@@ -63,6 +63,13 @@
       <useDefaultExcludes>true</useDefaultExcludes>
     </fileSet>
 
+    <!-- Web -->
+    <fileSet>
+      <directory>target/classes/web</directory>
+      <outputDirectory>web</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+    </fileSet>
+
     <!-- Copy System specific QT -->
     <fileSet>
       <directory>target/win</directory>
