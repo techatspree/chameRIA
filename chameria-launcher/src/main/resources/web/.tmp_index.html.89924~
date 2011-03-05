@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <title>Welcome to chameRIA</title>
+
+  <meta name="description" content="chameria welcome page">
+  <meta name="author" content="Clement Escoffier, clement.escoffier@gmail.com">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/libs/modernizr-1.6.min.js"></script>
+  <script src="js/libs/jquery-1.5.js"></script>
+  <script src="js/libs/hubu-0.0.1-SNAPSHOT.js"></script>
+
+  <!-- plugin -->
+  <script src="js/libs/jquery.easing.1.3.js"></script>
+  <script src="js/libs/jquery.tagcloud.min.js"></script>
+
+  <script src="js/script.js"></script>
+
+</head>
+<body>
+
+    <!--<div id="tag_container">
+        <ul id="tag">
+            <li class="techno">osgi</li>
+            <li class="techno">hubu</li>
+            <li class="pros">modular</li>
+            <li class="pros">system-integration</li>
+            <li class="pros">desktop</li>
+            <li class="techno">html5</li>
+            <li class="techno">chameleon</li>
+            <li class="techno">jquery</li>
+            <li class="techno">iPOJO</li>
+            <li class="message">Welcome</li>
+            <li class="message">To</li>
+            <li class="message">chameRIA</li>
+        </ul>
+    </div>-->
+
+    <div id="img_container">
+        <ul class="hover_block">
+      <li>
+          <a href="/"><img src="imgs/welcome.jpg" alt="Welcome" />
+          An Unique and Powerful way to infuse web technologies in desktop environment to get the best of both worlds.
+          </a></li>
+      <li>
+          <a href="/"><img src="imgs/direction.jpg" alt="To" />
+          Ease development with a web-powered HTML 5 frontend supported by robust Java-based component
+          </a>
+      </li>
+      <li>
+          <a href="/"><img src="imgs/camellia.jpg" alt="ChameRia" />
+          Embrace the modular pattern for both front-end and backend relying on depednency injection, seamless frontend-backend interactions...
+          </a>
+      </li>
+    </ul>
+    </div>
+
+</body>
+</html>
