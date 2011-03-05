@@ -5,10 +5,10 @@ import java.util.Map;
 import java.util.Properties;
 
 public class SubstVars {
-    
+
     private static final String DELIM_START = "${";
     private static final String DELIM_STOP  = "}";
-    
+
     /**
      * <p>
      * This method performs property variable substitution on the specified
@@ -20,7 +20,7 @@ public class SubstVars {
      * as nested variable placeholders, which are substituted from inner most to
      * outer most. Configuration properties override system properties.
      * </p>
-     * 
+     *
      * @param val
      *            The string on which to perform property substitution.
      * @param currentKey
@@ -37,6 +37,7 @@ public class SubstVars {
      *             property placeholder syntax or a recursive variable
      *             reference.
      **/
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     public static String substVars(String val, String currentKey,
             Map cycleMap, Properties configProps)
             throws IllegalArgumentException {
