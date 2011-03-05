@@ -140,6 +140,12 @@
           <type>jar</type>
           <scope>compile</scope>
         </dependency>
+        <dependency>
+          <groupId>de.akquinet.gomobile.chameria</groupId>
+          <artifactId>web-exposer</artifactId>
+          <version>1.5.0-SNAPSHOT</version>
+          <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -161,6 +167,7 @@
                        <Main-Class>de.akquinet.gomobile.chameria.launcher.Launcher</Main-Class>
                        <Private-Package>de.akquinet.gomobile.chameria.launcher</Private-Package>
                        <Export-Package>de.akquinet.gomobile.chameria.services</Export-Package>
+                       <Include-Resource></Include-Resource>
                     </instructions>
                     <encoding>UTF-8</encoding>
                 </configuration>
@@ -222,7 +229,7 @@
                             <outputDirectory>${project.build.directory}/runtime</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
-                            <includeArtifactIds>webview-factory,org.apache.felix.http.bundle,commons-io,commons-beanutils,commons-collections,commons-lang,org.ow2.chameleon.commons.logging,json-service-json-lib</includeArtifactIds>
+                            <includeArtifactIds>webview-factory,org.apache.felix.http.bundle,commons-io,commons-beanutils,commons-collections,commons-lang,org.ow2.chameleon.commons.logging,json-service-json-lib,web-exposer</includeArtifactIds>
                         </configuration>
                     </execution>
                     <execution>
