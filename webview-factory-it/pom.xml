@@ -57,6 +57,12 @@
     </dependency>
 
     <dependency>
+      <groupId>de.akquinet.gomobile.chameria</groupId>
+      <artifactId>chameria-service</artifactId>
+      <version>1.5.0-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.trolltech.qtjambi</groupId>
       <artifactId>qtjambi</artifactId>
       <version>4.6.0</version>
