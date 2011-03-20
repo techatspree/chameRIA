@@ -42,6 +42,9 @@
       <directory>target/runtime</directory>
       <outputDirectory>runtime</outputDirectory>
       <useDefaultExcludes>true</useDefaultExcludes>
+      <includes>
+          <include>*webview*</include> <!-- include the webview factory  -->
+      </includes>
     </fileSet>
 
   <!-- Scripts -->
