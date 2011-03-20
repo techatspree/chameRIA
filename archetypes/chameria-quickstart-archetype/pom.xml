@@ -24,5 +24,5 @@
     </parent>
 
     <artifactId>chameria-quickstart-archetype</artifactId>
-    <name>Chameria - Archetype ~ Quickstart</name>
+    <name>ChameRIA - Archetype ~ Quickstart</name>
 </project>
