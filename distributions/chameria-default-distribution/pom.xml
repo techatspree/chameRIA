@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>de.akquinet.chameria</groupId>
+    <groupId>de.akquinet.gomobile.chameria</groupId>
     <artifactId>chameria-default-distribution</artifactId>
     <name>ChameRIA - Default Distribution</name>
     <packaging>pom</packaging>
@@ -68,23 +68,6 @@
                                     <outputDirectory>${linux.dir}</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
-                        </configuration>
-                    </execution>
-
-                    <!-- unzip the launcher for win -->
-                    <execution>
-                        <id>chameria-dist-win</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>unpack-dependencies</goal>
-                        </goals>
-                        <configuration>
-                            <includeArtifactIds>de.akquinet.gomobile.chameria</includeArtifactIds>
-                            <classifier>win-distribution</classifier>
-                            <type>zip</type>
-                            <overWrite>true</overWrite>
-                            <outputDirectory>${win.dir}</outputDirectory>
-                            <copyPom>true</copyPom>
                         </configuration>
                     </execution>
 
