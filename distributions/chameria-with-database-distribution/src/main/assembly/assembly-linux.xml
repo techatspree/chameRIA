@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0
+                              http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+  <formats>
+    <format>zip</format>
+  </formats>
+  <id>linux</id>
+
+  <!-- do not create a root directory -->
+  <includeBaseDirectory>false</includeBaseDirectory>
+
+  <fileSets>
+    <!-- chameria distribution -->
+    <fileSet>
+      <directory>target/linux</directory>
+      <outputDirectory>/</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+      <excludes>
+          <exclude>*-sources.jar</exclude>
+          <exclude>*-javadoc.jar</exclude>
+          <exclude>*.zip</exclude>
+      </excludes>
+    </fileSet>
+
+  <!-- Licenses -->
+  <fileSet>
+      <directory>.</directory>
+      <outputDirectory>/</outputDirectory>
+      <useDefaultExcludes>true</useDefaultExcludes>
+      <includes>
+        <include>LICENSE*</include>
+        <include>NOTICE</include>
+       </includes>
+    </fileSet>
+  </fileSets>
+</assembly>
