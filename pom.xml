@@ -197,9 +197,12 @@
     <module>chameria-launcher</module>
     <module>web-exposer</module>
     <module>chameria-service</module>
+
     <module>distributions/chameria-default-distribution</module>
     <module>distributions/chameria-with-database-distribution</module>
     <module>distributions/chameria-with-example-distribution</module>
+
+    <module>archetypes/chameria-quickstart-archetype</module>
   </modules>
 
 
