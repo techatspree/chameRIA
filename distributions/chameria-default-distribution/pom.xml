@@ -281,14 +281,14 @@
         <dependency>
             <groupId>org.ow2.chameleon.rose.jsonrpc.endpoint</groupId>
             <artifactId>jabsorb-endpoint-factory</artifactId>
-            <version>0.1.2</version>
+            <version>0.1.3-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.ow2.chameleon.rose</groupId>
             <artifactId>org.ow2.chameleon.rose.core</artifactId>
-            <version>0.2.2</version>
+            <version>0.2.3-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
