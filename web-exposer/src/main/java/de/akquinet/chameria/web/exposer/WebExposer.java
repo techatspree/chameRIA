@@ -48,6 +48,14 @@ public class WebExposer {
             }
 
             File file = new File(m_root, name);
+
+            if (file.isDirectory()) {
+                File index = new File(file, "index.html");
+                if (index.exists()) {
+                    file = index;
+                }
+            }
+
             m_logger.info("Looking for " + file.getAbsolutePath());
             try {
                 return file.toURI().toURL();
