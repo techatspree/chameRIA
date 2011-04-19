@@ -20,7 +20,7 @@
     <artifactId>chameria-reactor</artifactId>
     <version>1.5.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>ChameRIA - reactor</name>
+    <name>ChameRIA - Reactor</name>
     <description>ChameRIA Project Reactor</description>
 
     <inceptionYear>2010</inceptionYear>

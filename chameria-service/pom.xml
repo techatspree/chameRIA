@@ -27,7 +27,7 @@
     <artifactId>chameria-service</artifactId>
     <version>1.5.0-SNAPSHOT</version>
 
-    <name>ChameRIA - service</name>
+    <name>ChameRIA - Service</name>
 
     <build>
         <plugins>
