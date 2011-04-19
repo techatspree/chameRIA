@@ -1,4 +1,4 @@
-package de.akquinet.gomobile.chameria.webview;
+package de.akquinet.chameria.webview;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

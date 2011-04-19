@@ -22,7 +22,7 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Private-Package>de.akquinet.gomobile.chameria.webview</Private-Package>
+                        <Private-Package>de.akquinet.chameria.webview</Private-Package>
                         <Import-Package>*</Import-Package>
                     </instructions>
                     <encoding>UTF-8</encoding>
@@ -61,7 +61,7 @@
             <artifactId>org.apache.felix.ipojo.annotations</artifactId>
         </dependency>
         <dependency>
-            <groupId>de.akquinet.gomobile.chameria</groupId>
+            <groupId>de.akquinet.chameria</groupId>
             <artifactId>chameria-service</artifactId>
             <version>1.5.0-SNAPSHOT</version>
         </dependency>

@@ -1,4 +1,4 @@
-package de.akquinet.gomobile.chameria.webview;
+package de.akquinet.chameria.webview;
 
 import java.io.File;
 import java.util.List;

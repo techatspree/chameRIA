@@ -1,4 +1,4 @@
-package de.akquinet.gomobile.chameria.webview;
+package de.akquinet.chameria.webview;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -30,7 +30,8 @@ import com.trolltech.qt.network.QNetworkProxy;
 import com.trolltech.qt.network.QNetworkReply;
 import com.trolltech.qt.webkit.QWebView;
 
-import de.akquinet.gomobile.chameria.services.BrowserService;
+import de.akquinet.chameria.services.BrowserService;
+
 
 /**
  * Main component of the web view factory.
