@@ -1,4 +1,4 @@
-package de.akquinet.gomobile.chameria;
+package de.akquinet.chameria;
 
 import javax.servlet.ServletException;
 
