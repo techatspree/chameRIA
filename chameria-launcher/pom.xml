@@ -178,9 +178,9 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                       <Main-Class>de.akquinet.gomobile.chameria.launcher.Launcher</Main-Class>
-                       <Private-Package>de.akquinet.gomobile.chameria.launcher</Private-Package>
-                       <Export-Package>de.akquinet.gomobile.chameria.services</Export-Package>
+                       <Main-Class>de.akquinet.chameria.launcher.Launcher</Main-Class>
+                       <Private-Package>de.akquinet.chameria.launcher</Private-Package>
+                       <Export-Package>de.akquinet.chameria.services</Export-Package>
                        <Include-Resource></Include-Resource>
                     </instructions>
                     <encoding>UTF-8</encoding>
@@ -240,7 +240,7 @@
                             <outputDirectory>${project.build.directory}/runtime</outputDirectory>
                             <overWriteReleases>false</overWriteReleases>
                             <overWriteSnapshots>true</overWriteSnapshots>
-                            <includeArtifactIds>webview-factory,org.apache.felix.http.bundle,commons-io,commons-beanutils,commons-collections,commons-lang,org.ow2.chameleon.commons.logging,json-service-json-lib,web-exposer</includeArtifactIds>
+                            <includeArtifactIds>chameria-webview-factory,org.apache.felix.http.bundle,commons-io,commons-beanutils,commons-collections,commons-lang,org.ow2.chameleon.commons.logging,json-service-json-lib,web-exposer</includeArtifactIds>
                         </configuration>
                     </execution>
                     <execution>
