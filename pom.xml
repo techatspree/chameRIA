@@ -178,37 +178,36 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>rat-maven-plugin</artifactId>
                 <configuration>
-          <excludeSubProjects>false</excludeSubProjects>
-          <useEclipseDefaultExcludes>false</useEclipseDefaultExcludes>
-          <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
-          <excludes>
-            <param>.gitignore</param>
-            <param>**/*.sha1</param>
-            <param>**/*.md5</param>
-            <param>**/*.pom</param>
-            <param>**/*.project</param>
-            <param>**/*.classpath</param>
-            <param>**/*.settings/**/*</param>
-            <param>**/metadata.xml</param>
-            <param>.git/**/*</param>
-            <param>doc/**/*</param>
-            <param>maven-eclipse.xml</param>
-            <param>.checkstyle</param>
-            <param>.externalToolBuilders/*</param>
-            <param>LICENSE.asm</param>
-            <param>.fbprefs</param>
-            <param>DEPENDENCIES</param>
-            <param>**/target/**/*</param>
-            <param>chameria-it-html5/**/*</param>
-            <param>**/archetype-resources/**/*</param>
-            <param>**/*/*.cfg</param>
-            <param>**/*/*.properties</param>
-            <param>**/src/main/resources/web/**/*</param>
-            <param>**/*.bat</param>
-            <param>**/*.sh</param>
-          </excludes>
-        </configuration>
-
+                    <excludeSubProjects>false</excludeSubProjects>
+                    <useEclipseDefaultExcludes>false</useEclipseDefaultExcludes>
+                    <useMavenDefaultExcludes>true</useMavenDefaultExcludes>
+                    <excludes>
+                        <param>.gitignore</param>
+                        <param>**/*.sha1</param>
+                        <param>**/*.md5</param>
+                        <param>**/*.pom</param>
+                        <param>**/*.project</param>
+                        <param>**/*.classpath</param>
+                        <param>**/*.settings/**/*</param>
+                        <param>**/metadata.xml</param>
+                        <param>.git/**/*</param>
+                        <param>doc/**/*</param>
+                        <param>maven-eclipse.xml</param>
+                        <param>.checkstyle</param>
+                        <param>.externalToolBuilders/*</param>
+                        <param>LICENSE.asm</param>
+                        <param>.fbprefs</param>
+                        <param>DEPENDENCIES</param>
+                        <param>**/target/**/*</param>
+                        <param>chameria-it-html5/**/*</param>
+                        <param>**/archetype-resources/**/*</param>
+                        <param>**/*/*.cfg</param>
+                        <param>**/*/*.properties</param>
+                        <param>**/src/main/resources/web/**/*</param>
+                        <param>**/*.bat</param>
+                        <param>**/*.sh</param>
+                    </excludes>
+                </configuration>
             </plugin>
 
             <plugin>
