@@ -1,4 +1,4 @@
-package de.akquinet.gomobile.chameria.launcher;
+package de.akquinet.chameria.launcher;
 
 import java.awt.SplashScreen;
 import java.io.File;

@@ -3,5 +3,5 @@ export CLASSPATH=core/chameria-launcher-${chameria.version}.jar:core/core-${cham
 
 export DISPLAY=:20
 JAVA32=/usr/lib/jvm/ia32-java-6-sun/bin/java
-$JAVA32 -d32 -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9876 -Dchameleon.log.level=INFO -Dcom.trolltech.qt.library-path-override=qt/lib de.akquinet.gomobile.chameria.launcher.Launcher --debug --config=conf/chameleon.properties  --deploy=deploy "$@" &
+$JAVA32 -d32 -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=9876 -Dchameleon.log.level=INFO -Dcom.trolltech.qt.library-path-override=qt/lib de.akquinet.chameria.launcher.Launcher --debug --config=conf/chameleon.properties  --deploy=deploy "$@" &
 echo $! > /tmp/chameria.pid

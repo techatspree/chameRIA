@@ -1,4 +1,4 @@
-package de.akquinet.gomobile.chameria.launcher;
+package de.akquinet.chameria.launcher;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -18,7 +18,7 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.framework.launch.Framework;
 import org.ow2.chameleon.core.Chameleon;
 
-import de.akquinet.gomobile.chameria.services.ActivationService;
+import de.akquinet.chameria.services.ActivationService;
 
 public class ChameRIA extends Chameleon {
 
@@ -39,7 +39,7 @@ public class ChameRIA extends Chameleon {
             "com.trolltech.qt.xml, " +
             "com.trolltech.qt.xmlpatterns";
 
-    public final static String SERVICE_PACKAGES = "de.akquinet.gomobile.chameria.services";
+    public final static String SERVICE_PACKAGES = "de.akquinet.chameria.services";
 
     private Framework m_framework;
 
