@@ -1,4 +1,4 @@
-package de.akquinet.gomobile.chameria.services;
+package de.akquinet.chameria.services;
 
 /**
  * Service interface provided by the WebViewFactory to control the browser.

@@ -40,7 +40,7 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Import-Package>*</Import-Package>
-                        <Export-Package>de.akquinet.gomobile.chameria.services</Export-Package>
+                        <Export-Package>de.akquinet.chameria.services</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
