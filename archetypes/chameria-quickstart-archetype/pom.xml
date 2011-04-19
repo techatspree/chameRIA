@@ -17,7 +17,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>de.akquinet.gomobile.chameria</groupId>
+        <groupId>de.akquinet.chameria</groupId>
         <artifactId>chameria-reactor</artifactId>
         <version>1.5.0-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>

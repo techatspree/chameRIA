@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright 2010 akquinet
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>de.akquinet.gomobile.chameria</groupId>
+    <groupId>de.akquinet.chameria</groupId>
     <artifactId>chameria-launcher</artifactId>
-    <name>chameria - launcher</name>
+    <name>ChameRIA - launcher</name>
     <version>1.5.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
     <parent>
-        <groupId>de.akquinet.gomobile.chameria</groupId>
+        <groupId>de.akquinet.chameria</groupId>
         <artifactId>chameria-reactor</artifactId>
         <version>1.5.0-SNAPSHOT</version>
     </parent>
 
     <properties>
         <chameria.version>${project.version}</chameria.version>
-        <chameleon.version>0.3.0-SNAPSHOT</chameleon.version>
+        <chameleon.version>0.4.0</chameleon.version>
         <logback.version>0.9.24</logback.version>
         <slf4j.version>1.6.1</slf4j.version>
         <felix.version>3.0.2</felix.version>
@@ -72,9 +86,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.1</version>
             <type>jar</type>
-            <scope>test</scope>
         </dependency>
 
         <!-- TinyBundle -->
@@ -109,17 +121,26 @@
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
+
         <dependency>
-            <groupId>de.akquinet.gomobile.chameria</groupId>
-            <artifactId>webview-factory</artifactId>
+            <groupId>de.akquinet.chameria</groupId>
+            <artifactId>chameria-webview-factory</artifactId>
             <version>1.5.0-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
-            <groupId>de.akquinet.gomobile.chameria</groupId>
+            <groupId>de.akquinet.chameria</groupId>
             <artifactId>chameria-service</artifactId>
             <version>1.5.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
+        <dependency>
+          <groupId>de.akquinet.chameria</groupId>
+          <artifactId>chameria-web-exposer</artifactId>
+          <version>1.5.0-SNAPSHOT</version>
+          <scope>compile</scope>
+        </dependency>
+
         <dependency>
           <groupId>commons-io</groupId>
           <artifactId>commons-io</artifactId>
@@ -140,12 +161,6 @@
           <type>jar</type>
           <scope>compile</scope>
         </dependency>
-        <dependency>
-          <groupId>de.akquinet.gomobile.chameria</groupId>
-          <artifactId>web-exposer</artifactId>
-          <version>1.5.0-SNAPSHOT</version>
-          <scope>compile</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -160,7 +175,6 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.1.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -175,7 +189,6 @@
 
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.2-beta-5</version>
                 <executions>
                     <execution>
                         <id>make-assembly</id>
@@ -201,7 +214,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>2.1</version>
                 <executions>
                     <execution>
                         <id>copy-core</id>

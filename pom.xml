@@ -1,267 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>de.akquinet.gomobile.chameria</groupId>
-  <artifactId>chameria-reactor</artifactId>
-  <version>1.5.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>chameria - reactor</name>
-  <description>Chameria Reactor</description>
+<!--
+ Copyright 2010 akquinet
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
 
-  <inceptionYear>2010</inceptionYear>
+   http://www.apache.org/licenses/LICENSE-2.0
 
-  <organization>
-    <name>akquinet A.G.</name>
-    <url>http://www.akquinet.de/en</url>
-  </organization>
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>de.akquinet.chameria</groupId>
+    <artifactId>chameria-reactor</artifactId>
+    <version>1.5.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>ChameRIA - reactor</name>
+    <description>ChameRIA Project Reactor</description>
 
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+    <inceptionYear>2010</inceptionYear>
 
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>5</version>
-  </parent>
+    <organization>
+        <name>akquinet A.G.</name>
+        <url>http://www.akquinet.de/en</url>
+    </organization>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-all</artifactId>
-      <version>1.8.5</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.core</artifactId>
-      <version>4.2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.osgi</groupId>
-      <artifactId>org.osgi.compendium</artifactId>
-      <version>4.2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <version>2.5</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>1.6.0</version>
-      <type>jar</type>
-    </dependency>
-  </dependencies>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-  <dependencyManagement>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>5</version>
+    </parent>
+
     <dependencies>
-      <dependency>
-        <groupId>com.trolltech.qtjambi</groupId>
-        <artifactId>qtjambi</artifactId>
-        <version>4.6.0</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.trolltech.qtjambi</groupId>
-        <artifactId>qtjambi-native</artifactId>
-        <version>4.6.0</version>
-        <classifier>macosx-gcc</classifier>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.trolltech.qtjambi</groupId>
-        <artifactId>qtjambi-native</artifactId>
-        <version>4.6.0</version>
-        <classifier>linux32-gcc-nostdlib</classifier>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.trolltech.qtjambi</groupId>
-        <artifactId>qtjambi-native</artifactId>
-        <classifier>win32</classifier>
-        <version>4.6.0</version>
-        <scope>provided</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.apache.felix</groupId>
-        <artifactId>org.apache.felix.ipojo.annotations</artifactId>
-        <version>1.6.2</version>
-        <scope>compile</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.6.0</version>
-        <type>jar</type>
-        <scope>compile</scope>
-      </dependency>
-      <dependency>
-        <groupId>org.ow2.chameleon</groupId>
-        <artifactId>core</artifactId>
-        <version>0.2.2</version>
-      </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.8.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.compendium</artifactId>
+            <version>4.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.0</version>
+            <type>jar</type>
+        </dependency>
     </dependencies>
-  </dependencyManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.trolltech.qtjambi</groupId>
+                <artifactId>qtjambi</artifactId>
+                <version>4.6.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.trolltech.qtjambi</groupId>
+                <artifactId>qtjambi-native</artifactId>
+                <version>4.6.0</version>
+                <classifier>macosx-gcc</classifier>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.trolltech.qtjambi</groupId>
+                <artifactId>qtjambi-native</artifactId>
+                <version>4.6.0</version>
+                <classifier>linux32-gcc-nostdlib</classifier>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.trolltech.qtjambi</groupId>
+                <artifactId>qtjambi-native</artifactId>
+                <classifier>win32</classifier>
+                <version>4.6.0</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.ipojo.annotations</artifactId>
+                <version>1.6.4</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.6.0</version>
+                <type>jar</type>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.ow2.chameleon</groupId>
+                <artifactId>core</artifactId>
+                <version>0.4.0</version>
+            </dependency>
+            <dependency>
+            	<groupId>junit</groupId>
+            	<artifactId>junit</artifactId>
+            	<version>4.8.2</version>
+            	<type>jar</type>
+            	<scope>test</scope>
+            </dependency>
+            <dependency>
+            	<groupId>org.apache.felix</groupId>
+            	<artifactId>org.apache.felix.ipojo</artifactId>
+            	<version>1.6.8</version>
+            	<scope>compile</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
-  <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>maven-bundle-plugin</artifactId>
-          <version>2.2.0</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.felix</groupId>
-          <artifactId>maven-ipojo-plugin</artifactId>
-          <version>1.6.0</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>2.1</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-javadoc-plugin</artifactId>
-          <version>2.7</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-source-plugin</artifactId>
-          <version>2.1.2</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>2.2.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-ipojo-plugin</artifactId>
+                    <version>1.6.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.3.2</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.7</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.1.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
 
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <configuration>
-          <useReleaseProfile>true</useReleaseProfile>
-          <goals>deploy</goals>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
-
-  <modules>
-    <module>webview-factory</module>
-    <module>chameria-launcher</module>
-    <module>web-exposer</module>
-    <module>chameria-service</module>
-
-    <module>distributions/chameria-default-distribution</module>
-    <module>distributions/chameria-with-database-distribution</module>
-    <module>distributions/chameria-with-example-distribution</module>
-
-    <module>archetypes/chameria-quickstart-archetype</module>
-  </modules>
-
-
-  <profiles>
-    <profile>
-      <id>manual</id>
-      <modules>
-        <module>webview-factory-it</module>
-      </modules>
-    </profile>
-
-    <profile>
-      <id>it</id>
-      <modules>
-        <module>chameria-it-html5</module>
-        <module>chameria-it-runtime</module>
-      </modules>
-    </profile>
-
-    <profile>
-      <id>ats.nexus</id>
-      <distributionManagement>
-        <repository>
-          <id>${repo.releases.id}</id>
-          <name>${repo.releases.name}</name>
-          <url>${repo.releases.url}</url>
-          <uniqueVersion>false</uniqueVersion>
-        </repository>
-
-        <snapshotRepository>
-          <id>${repo.snapshots.id}</id>
-          <name>${repo.snapshots.name}</name>
-          <url>${repo.snapshots.url}</url>
-          <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
-      </distributionManagement>
-    </profile>
-
-    <profile>
-      <id>release</id>
-      <build>
         <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
-  </profiles>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <useReleaseProfile>true</useReleaseProfile>
+                    <goals>deploy</goals>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <modules>
+        <module>chameria-webview-factory</module>
+        <module>chameria-launcher</module>
+        <module>chameria-web-exposer</module>
+        <module>chameria-service</module>
+
+        <module>distributions/chameria-default-distribution</module>
+        <module>distributions/chameria-with-database-distribution</module>
+        <module>distributions/chameria-with-example-distribution</module>
+
+        <module>archetypes/chameria-quickstart-archetype</module>
+    </modules>
+
+
+    <profiles>
+        <profile>
+            <id>manual</id>
+            <modules>
+                <module>chameria-webview-factory-it</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>it</id>
+            <modules>
+                <module>chameria-it-html5</module>
+                <module>chameria-it-runtime</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>ats.nexus</id>
+            <distributionManagement>
+                <repository>
+                    <id>${repo.releases.id}</id>
+                    <name>${repo.releases.name}</name>
+                    <url>${repo.releases.url}</url>
+                    <uniqueVersion>false</uniqueVersion>
+                </repository>
+
+                <snapshotRepository>
+                    <id>${repo.snapshots.id}</id>
+                    <name>${repo.snapshots.name}</name>
+                    <url>${repo.snapshots.url}</url>
+                    <uniqueVersion>false</uniqueVersion>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
 
 </project>
