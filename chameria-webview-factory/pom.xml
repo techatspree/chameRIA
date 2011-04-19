@@ -3,22 +3,21 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>de.akquinet.gomobile.chameria</groupId>
+        <groupId>de.akquinet.chameria</groupId>
         <artifactId>chameria-reactor</artifactId>
         <version>1.5.0-SNAPSHOT</version>
     </parent>
-    <groupId>de.akquinet.gomobile.chameria</groupId>
-    <artifactId>webview-factory</artifactId>
+    <groupId>de.akquinet.chameria</groupId>
+    <artifactId>chameria-webview-factory</artifactId>
     <version>1.5.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
-    <name>chameria - Web View Factory</name>
+    <name>ChameRIA - Web View Factory</name>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.0.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -32,7 +31,6 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-ipojo-plugin</artifactId>
-                <version>1.6.0</version>
                 <executions>
                     <execution>
                         <goals>
@@ -56,7 +54,6 @@
         <dependency>
             <groupId>org.ow2.chameleon</groupId>
             <artifactId>core</artifactId>
-            <version>0.2.2</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
