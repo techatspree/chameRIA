@@ -19,13 +19,13 @@
     <groupId>de.akquinet.chameria</groupId>
     <artifactId>chameria-launcher</artifactId>
     <name>ChameRIA - Launcher</name>
-    <version>1.5.0</version>
+    <version>1.5.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
 
     <parent>
         <groupId>de.akquinet.chameria</groupId>
         <artifactId>chameria-reactor</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.1-SNAPSHOT</version>
     </parent>
 
     <properties>
@@ -124,19 +124,19 @@
         <dependency>
             <groupId>de.akquinet.chameria</groupId>
             <artifactId>chameria-webview-factory</artifactId>
-            <version>1.5.0</version>
+            <version>1.5.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>de.akquinet.chameria</groupId>
             <artifactId>chameria-service</artifactId>
-            <version>1.5.0</version>
+            <version>1.5.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
           <groupId>de.akquinet.chameria</groupId>
           <artifactId>chameria-web-exposer</artifactId>
-          <version>1.5.0</version>
+          <version>1.5.1-SNAPSHOT</version>
           <scope>compile</scope>
         </dependency>
 

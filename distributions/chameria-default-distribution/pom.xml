@@ -18,12 +18,12 @@
     <artifactId>chameria-default-distribution</artifactId>
     <name>ChameRIA - Default Distribution</name>
     <packaging>pom</packaging>
-    <version>1.5.0</version>
+    <version>1.5.1-SNAPSHOT</version>
 
     <parent>
         <groupId>de.akquinet.chameria</groupId>
         <artifactId>chameria-reactor</artifactId>
-        <version>1.5.0</version>
+        <version>1.5.1-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
@@ -238,7 +238,7 @@
         <dependency>
             <groupId>de.akquinet.chameria</groupId>
             <artifactId>chameria-web-exposer</artifactId>
-            <version>1.5.0</version>
+            <version>1.5.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
 
