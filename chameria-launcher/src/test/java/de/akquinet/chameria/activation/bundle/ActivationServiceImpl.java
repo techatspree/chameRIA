@@ -1,4 +1,4 @@
-package de.akquinet.gomobile.chameria.activation.bundle;
+package de.akquinet.chameria.activation.bundle;
 
 import java.util.Arrays;
 
@@ -6,14 +6,15 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 
-import de.akquinet.gomobile.chameria.services.ActivationService;
-import de.akquinet.gomobile.chameria.services.ActivationUtils;
+import de.akquinet.chameria.services.ActivationService;
+import de.akquinet.chameria.services.ActivationUtils;
+
 
 public class ActivationServiceImpl implements ActivationService,
         BundleActivator {
-    
+
     private ServiceRegistration reg;
-    
+
     public int activation_count = 0;
     public String[] last_args = null;
     public String open = null;
@@ -23,7 +24,7 @@ public class ActivationServiceImpl implements ActivationService,
         last_args = args;
         activation_count ++;
         open = ActivationUtils.getOpenArgument(args);
-        
+
     }
 
     public void deactivation() {

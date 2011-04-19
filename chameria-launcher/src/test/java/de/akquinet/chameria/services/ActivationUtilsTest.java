@@ -1,9 +1,9 @@
-package de.akquinet.gomobile.chameria.services;
+package de.akquinet.chameria.services;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import de.akquinet.gomobile.chameria.services.ActivationUtils;
+import de.akquinet.chameria.services.ActivationUtils;
 
 public class ActivationUtilsTest {
     

@@ -1,4 +1,4 @@
-package de.akquinet.gomobile.chameria.activation;
+package de.akquinet.chameria.activation;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,9 +20,9 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.framework.launch.Framework;
 
 import aQute.lib.osgi.Constants;
-import de.akquinet.gomobile.chameria.activation.bundle.ActivationServiceImpl;
-import de.akquinet.gomobile.chameria.launcher.ChameRIA;
-import de.akquinet.gomobile.chameria.services.ActivationService;
+import de.akquinet.chameria.activation.bundle.ActivationServiceImpl;
+import de.akquinet.chameria.launcher.ChameRIA;
+import de.akquinet.chameria.services.ActivationService;
 
 public class ActivationTest {
 
