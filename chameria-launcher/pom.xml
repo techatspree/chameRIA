@@ -34,6 +34,7 @@
         <logback.version>0.9.24</logback.version>
         <slf4j.version>1.6.1</slf4j.version>
         <felix.version>3.0.2</felix.version>
+        <qt.version>4.6.0.1-SNAPSHOT</qt.version>
         <core.dir>${project.build.directory}/test-configuration/core</core.dir>
     </properties>
 
@@ -54,31 +55,31 @@
             <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi</artifactId>
             <classifier>jnlp</classifier>
-            <version>4.6.0.1-SNAPSHOT</version>
+            <version>${qt.version}</version>
         </dependency>
         <dependency>
             <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi-util</artifactId>
-            <version>4.6.0.1-SNAPSHOT</version>
+            <version>${qt.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi-native</artifactId>
             <classifier>macosx-gcc</classifier>
-            <version>4.6.0.1-SNAPSHOT</version>
+            <version>${qt.version}</version>
         </dependency>
         <dependency>
             <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi-native</artifactId>
             <classifier>win32</classifier>
-            <version>4.6.0.1-SNAPSHOT</version>
+            <version>${qt.version}</version>
         </dependency>
         <dependency>
             <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi-native</artifactId>
             <classifier>linux32-gcc-nostdlib</classifier>
-            <version>4.6.0.1-SNAPSHOT</version>
+            <version>${qt.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -262,7 +263,7 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>com.trolltech.qtjambi</groupId>
+                                    <groupId>de.akquinet.chameria.dependencies</groupId>
                                     <artifactId>qtjambi-native</artifactId>
                                     <classifier>win32</classifier>
                                     <version>${qt.version}</version>
@@ -270,7 +271,7 @@
                                     <outputDirectory>${project.build.directory}/win</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>com.trolltech.qtjambi</groupId>
+                                    <groupId>de.akquinet.chameria.dependencies</groupId>
                                     <artifactId>qtjambi-native</artifactId>
                                     <classifier>linux32-gcc-nostdlib</classifier>
                                     <version>${qt.version}</version>
@@ -278,7 +279,7 @@
                                     <outputDirectory>${project.build.directory}/linux</outputDirectory>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>com.trolltech.qtjambi</groupId>
+                                    <groupId>de.akquinet.chameria.dependencies</groupId>
                                     <artifactId>qtjambi-native</artifactId>
                                     <classifier>macosx-gcc</classifier>
                                     <version>${qt.version}</version>
