@@ -76,34 +76,6 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.trolltech.qtjambi</groupId>
-                <artifactId>qtjambi</artifactId>
-                <version>4.6.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.trolltech.qtjambi</groupId>
-                <artifactId>qtjambi-native</artifactId>
-                <version>4.6.0</version>
-                <classifier>macosx-gcc</classifier>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.trolltech.qtjambi</groupId>
-                <artifactId>qtjambi-native</artifactId>
-                <version>4.6.0</version>
-                <classifier>linux32-gcc-nostdlib</classifier>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.trolltech.qtjambi</groupId>
-                <artifactId>qtjambi-native</artifactId>
-                <classifier>win32</classifier>
-                <version>4.6.0</version>
-                <scope>provided</scope>
-            </dependency>
-
-            <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.ipojo.annotations</artifactId>
                 <version>1.6.4</version>
