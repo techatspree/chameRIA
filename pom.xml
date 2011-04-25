@@ -273,6 +273,8 @@
     </scm>
 
     <modules>
+        <module>chameria-dependencies</module>
+
         <module>chameria-webview-factory</module>
         <module>chameria-launcher</module>
         <module>chameria-web-exposer</module>
