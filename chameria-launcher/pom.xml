@@ -34,8 +34,6 @@
         <logback.version>0.9.24</logback.version>
         <slf4j.version>1.6.1</slf4j.version>
         <felix.version>3.0.2</felix.version>
-        <qt.version>4.6.0</qt.version>
-
         <core.dir>${project.build.directory}/test-configuration/core</core.dir>
     </properties>
 
@@ -53,34 +51,34 @@
             <version>${chameleon.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.trolltech.qtjambi</groupId>
+            <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi</artifactId>
             <classifier>jnlp</classifier>
-            <version>${qt.version}</version>
+            <version>4.6.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.trolltech.qtjambi</groupId>
+            <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi-util</artifactId>
-            <version>${qt.version}</version>
+            <version>4.6.0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.trolltech.qtjambi</groupId>
+            <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi-native</artifactId>
             <classifier>macosx-gcc</classifier>
-            <version>${qt.version}</version>
+            <version>4.6.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.trolltech.qtjambi</groupId>
+            <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi-native</artifactId>
             <classifier>win32</classifier>
-            <version>${qt.version}</version>
+            <version>4.6.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.trolltech.qtjambi</groupId>
+            <groupId>de.akquinet.chameria.dependencies</groupId>
             <artifactId>qtjambi-native</artifactId>
             <classifier>linux32-gcc-nostdlib</classifier>
-            <version>${qt.version}</version>
+            <version>4.6.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
