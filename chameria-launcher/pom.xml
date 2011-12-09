@@ -181,7 +181,6 @@
                        <Export-Package>de.akquinet.chameria.services</Export-Package>
                        <Include-Resource />
                     </instructions>
-                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
 

@@ -245,8 +245,6 @@
     </scm>
 
     <modules>
-        <module>chameria-dependencies</module>
-
         <module>chameria-webview-factory</module>
         <module>chameria-launcher</module>
         <module>chameria-web-exposer</module>
@@ -261,6 +259,12 @@
 
 
     <profiles>
+        <profile>
+            <id>install-qt</id>
+            <modules>
+                <module>chameria-dependencies</module>
+            </modules>
+        </profile>
         <profile>
             <id>manual</id>
             <modules>
