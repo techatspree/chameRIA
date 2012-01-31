@@ -1,8 +1,14 @@
 $(function(){
 
-  $('ul.hover_block li').hover(function(){
-    $(this).find('img').animate({top:'182px'},{queue:false,duration:500});
-  }, function(){
-    $(this).find('img').animate({top:'0px'},{queue:false,duration:500});
-  });
-});
+    // Intercept button click to call the service.
+    $("#call").click(function() {
+       $.get("http://localhost:8080/hello?name=" + $("#name").val())
+            .success(function(result) {
+                // Display a success message.
+                $("#result").empty();
+               var message = $("<div></div>").html(result).addClass("alert-message").addClass("success");
+               $("#result").append(message);
+           });
+    });
+
+});

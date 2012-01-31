@@ -6,6 +6,7 @@
     <meta name="description" content="chameria welcome page">
     <meta name="author" content="Clement Escoffier, clement.escoffier@gmail.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 
     <script src="libs/modernizr-1.6.min.js">
@@ -20,33 +21,24 @@
 </head>
 <body>
 
-<div id="img_container">
-    <ul class="hover_block">
-        <li>
-            <a href="#">
-                <img src="imgs/welcome.jpg" alt="Welcome"/>
-                An Unique and Powerful way to infuse <strong>web</strong> technologies in <strong>desktop</strong>
-                environment to get the best of both worlds.
-                <p>Join the <strong>revolution</strong>!</p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <img src="imgs/direction.jpg" alt="To"/>
-                Ease development with a web-powered <strong>HTML 5</strong> frontend supported by robust
-                <strong>OSGi</strong> components.
-                <p>Benefit of the <strong>clean</strong> separation along a seamless <strong>integration</strong>.</p>
-            </a>
-        </li>
-        <li>
-            <a href="#">
-                <img src="imgs/camellia.jpg" alt="ChameRia"/>
-                Embrace the <strong>modular</strong> pattern.
-                <p>Make your development easier by beneficying of dependency injections and clear separation of
-                    concerns.</p>
-            </a>
-        </li>
-    </ul>
+<div class="container">
+    <div class="wrapper">
+        <div class="row spaceBelow">
+            <h1 class="span8">ChameRIA Tutorial</h1>
+        </div>
+        <div class="row spaceBelow">
+            <p class="span8">
+                Enter your name and then click on call. It will invoke the OSGi service and display the response.
+            </p>
+        </div>
+        <div class="row spaceBelow">
+            <input class="span6" id="name" name="name" size="30" type="text">
+            <button id="call" class="span2 btn primary">Call</button>
+        </div>
+        <div class="row spaceBelow">
+            <div id="result" class="span8"></div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
