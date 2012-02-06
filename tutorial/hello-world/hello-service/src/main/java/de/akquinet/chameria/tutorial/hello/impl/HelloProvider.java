@@ -1,7 +1,10 @@
 package de.akquinet.chameria.tutorial.hello.impl;
 
+import org.apache.felix.ipojo.annotations.Component;
+import org.apache.felix.ipojo.annotations.Instantiate;
+import org.apache.felix.ipojo.annotations.Provides;
+
 import de.akquinet.chameria.tutorial.hello.Hello;
-import org.apache.felix.ipojo.annotations.*;
 
 /**
  * Simple implementation of the Hello service.
@@ -14,7 +17,7 @@ import org.apache.felix.ipojo.annotations.*;
  */
 @Component
 @Provides
-@Instantiate
+@Instantiate(name="helloService1")
 public class HelloProvider implements Hello {
     
     public String hello(String name) {
