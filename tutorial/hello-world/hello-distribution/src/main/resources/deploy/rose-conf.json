@@ -1,0 +1,23 @@
+{
+	"machine" : {
+		"id" : "chameRIA",
+		"host" : "localhost",
+		
+		"connection" : [
+				{
+				"out" : {
+					"service_filter" : "(objectClass=de.akquinet.chameria.tutorial.hello.Hello)",
+					"protocol" : [ "jsonrpc" ]
+					}
+				}
+		],
+
+		"component" : [
+			{ 
+			  "factory" : "RoSe_exporter.jabsorb",
+			  "properties" : { "jsonrpc.servlet.name" : "/JSONRPC" }
+			}
+		]
+	}
+}
+

@@ -32,7 +32,7 @@
         <win.dir>${project.build.directory}/win/</win.dir>
         <linux.dir>${project.build.directory}/linux/</linux.dir>
 
-        <runtime.ids>org.apache.felix.http.bundle,i18n-service,resource-bundle-extender,shared-preferences-service,xml-shared-preferences,httpclient-osgi,httpcore-osgi,org.apache.felix.ipojo.handler.whiteboard,commons-io,commons-beanutils,commons-collections,commons-lang,org.ow2.chameleon.commons.logging,json-service-json-lib,chameria-web-exposer,jabsorb-endpoint-factory,org.ow2.chameleon.rose.core,org.ow2.chameleon.commons.jabsorb</runtime.ids>
+        <runtime.ids>org.apache.felix.http.bundle,i18n-service,resource-bundle-extender,shared-preferences-service,xml-shared-preferences,httpclient-osgi,httpcore-osgi,org.apache.felix.ipojo.handler.whiteboard,commons-io,commons-beanutils,commons-collections,commons-lang,org.ow2.chameleon.commons.logging,json-service-json-lib,chameria-web-exposer,jabsorb-exporter,rose-core,json-configurator,org.ow2.chameleon.commons.jabsorb</runtime.ids>
     </properties>
 
     <build>
@@ -289,16 +289,23 @@
         </dependency>
 
         <dependency>
-            <groupId>org.ow2.chameleon.rose.jsonrpc.endpoint</groupId>
-            <artifactId>jabsorb-endpoint-factory</artifactId>
-            <version>0.1.3</version>
+            <groupId>org.ow2.chameleon.rose.jsonrpc</groupId>
+            <artifactId>jabsorb-exporter</artifactId>
+            <version>0.1.4-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.ow2.chameleon.rose</groupId>
-            <artifactId>org.ow2.chameleon.rose.core</artifactId>
-            <version>0.2.3</version>
+            <artifactId>json-configurator</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.ow2.chameleon.rose</groupId>
+            <artifactId>rose-core</artifactId>
+            <version>0.2.4-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
