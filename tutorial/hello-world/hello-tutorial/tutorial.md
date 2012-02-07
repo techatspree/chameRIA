@@ -66,8 +66,11 @@ The provider is using iPOJO to be published as an OSGi service. So we don't have
         }
     }
 
+_Ignore the instance name set in the code, we will come back to this later._
+
 Finally, a Servlet is used to expose the service to the web view. We're using the HTTP Server contained in ChameRIA and
 accessible using the OSGi _HttpService_.
+
 
     /**
      * A simple servlet invoking the Hello service, and returning the response.
@@ -148,8 +151,79 @@ To build the distribution, just run _mvn clean install_. Then, you can launch th
     cd target/linux or target\win or target/mac
     sh launch-linux.sh or launch-win.bat or sh launch-mac.sh
 
-That's it !
 
+Accessing services using JSON-RPC
+---------------------------------
+
+Obviously creating an endpoint for every service you want to access in the UI is not what you want to do. ChameRIA comes
+with OW2 Chameleon Rose, a mechanism to expose OSGi services remotely. Especially, Rose supports JSON-RPC, which is
+really easy to consume in JavaScript.
+
+In the _deploy_ folder of the distribution, look at the _rose-conf.json_ file:
+
+    {
+    	"machine" : {
+    		"id" : "chameRIA",
+    		"host" : "localhost",
+
+    		"connection" : [
+    				{
+    				"out" : {
+    					"service_filter" : "(objectClass=de.akquinet.chameria.tutorial.hello.Hello)",
+    					"protocol" : [ "jsonrpc" ]
+    					}
+    				}
+    		],
+
+    		"component" : [
+    			{
+    			  "factory" : "RoSe_exporter.jabsorb",
+    			  "properties" : { "jsonrpc.servlet.name" : "/JSONRPC" }
+    			}
+    		]
+    	}
+    }
+
+This file instructs Rose to expose the Hello Service as JSON-RPC.
+
+Using JSON-RPC makes the client code simpler:
+
+    $(function(){
+        var jsonrpc = new JSONRpcClient("/JSONRPC");
+
+        // Intercept button click to call the service.
+        $("#callJsonRpc").click(function() {
+
+           jsonrpc.helloService1.hello(function(result, exception){
+
+        	 //Handle the exception
+        	 if (exception) {
+                console.log('An error occured while trying to call helloService1.hello');
+             }
+
+             // Display a success message.
+             $("#result").empty();
+             var message = $("<div></div>").html(result).addClass("alert-message").addClass("success (JsonRpc)");
+             $("#result").append(message);
+
+           }, $("#nameJsonRpc").val()); //args
+
+        });
+
+    });
+
+First, we initiate the JSON-RPC support, and intercept the click action on a button. We can invoke the hello service with:
+_jsonrpc.helloService1.hello_, where helloService1 is the instance name (set in the provider @Instantiate annotation).
+
+With JSON-RPC you can easily support:
+
+* exception
+* synchronous and asynchronous call
+* complex objects
+
+
+That's it !
+-----------
 This tutorial has shown how to create a simple ChameRIA application, focusing in particular on how OSGi services can be used in
 the front-end.
 
