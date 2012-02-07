@@ -18,7 +18,7 @@ OSGi services
 
 ChameRIA relies on [OSGi](http://en.wikipedia.org/wiki/Osgi) for its Java part. OSGi is a module layer for Java, but
 also provides very powerful service-orientation. So applications developed with ChameRIA are modular, and can be
- dynamic. ChameRIA is using [Apache Felix](http://felix.apache.org)].
+ dynamic. ChameRIA is using [Apache Felix](http://felix.apache.org).
 
 However, as the OSGi API is kind of tricky, ChameRIA relies on [iPOJO](http://ipojo.org) so as to simplify all OSGi-related
 tasks.
@@ -155,9 +155,9 @@ To build the distribution, just run _mvn clean install_. Then, you can launch th
 Accessing services using JSON-RPC
 ---------------------------------
 
-Obviously creating an endpoint for every service you want to access in the UI is not what you want to do. ChameRIA comes
-with OW2 Chameleon Rose, a mechanism to expose OSGi services remotely. Especially, Rose supports JSON-RPC, which is
-really easy to consume in JavaScript.
+Obviously, creating an endpoint for every service you want to access in the UI is not what you want to do. ChameRIA comes
+with OW2 Chameleon Rose, a mechanism to expose OSGi services remotely. Of particular interest is that Rose supports JSON-RPC, 
+which is really easy to consume in JavaScript.
 
 In the _deploy_ folder of the distribution, look at the _rose-conf.json_ file:
 
@@ -194,19 +194,19 @@ Using JSON-RPC makes the client code simpler:
         // Intercept button click to call the service.
         $("#callJsonRpc").click(function() {
 
-           jsonrpc.helloService1.hello(function(result, exception){
+            jsonrpc.helloService1.hello(function(result, exception){
 
-        	 //Handle the exception
-        	 if (exception) {
-                console.log('An error occured while trying to call helloService1.hello');
-             }
+            	   //Handle the exception
+            	   if (exception) {
+                    console.log('An error occured while trying to call helloService1.hello');
+                }
 
-             // Display a success message.
-             $("#result").empty();
-             var message = $("<div></div>").html(result).addClass("alert-message").addClass("success (JsonRpc)");
-             $("#result").append(message);
-
-           }, $("#nameJsonRpc").val()); //args
+                // Display a success message.
+                $("#result").empty();
+                var message = $("<div></div>").html(result).addClass("alert-message").addClass("success (JsonRpc)");
+                $("#result").append(message);
+   
+            }, $("#nameJsonRpc").val()); //args
 
         });
 
@@ -217,8 +217,8 @@ _jsonrpc.helloService1.hello_, where helloService1 is the instance name (set in 
 
 With JSON-RPC you can easily support:
 
-* exception
-* synchronous and asynchronous call
+* exceptions
+* synchronous and asynchronous calls
 * complex objects
 
 
